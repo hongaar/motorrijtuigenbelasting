@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.0.0...v1.1.0) (2023-01-21)
+
+
+### Features
+
+* first version of Models_2023 (failing) ([054d177](https://github.com/hongaar/motorrijtuigenbelasting/commit/054d177374c5892e8388cc1efa79dcf887f254d3))
+
 # 1.0.0 (2023-01-20)
 
 
