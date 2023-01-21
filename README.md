@@ -6,7 +6,24 @@
 yarn|npm add motorrijtuigenbelasting
 ```
 
+JavaScript example:
+
 ```js
+import { berekenMrb } from "motorrijtuigenbelasting";
+
+// bedrag is motorrijtuigenbelasting per tijdvak van 3 maanden in euro's
+const bedrag = berekenMrb({
+  voertuigtype: "Personenauto",
+  brandstof: "Benzine",
+  elektrisch_of_waterstof: false,
+  gewicht: 1051,
+  provincie: "Utrecht",
+});
+```
+
+TypeScript example:
+
+```ts
 import {
   berekenMrb,
   Brandstof,
