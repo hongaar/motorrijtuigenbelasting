@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.1.1...v1.2.0) (2023-01-24)
+
+
+### Features
+
+* personenauto's ([5c29ae8](https://github.com/hongaar/motorrijtuigenbelasting/commit/5c29ae8ff9d3a1f476ae6cf580de40bac383f706))
+
 ## [1.1.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.1.0...v1.1.1) (2023-01-21)
 
 
