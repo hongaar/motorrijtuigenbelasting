@@ -1,3 +1,4 @@
+import { InvalidParameters } from "../../errors.js";
 import { Provincie } from "../../params.js";
 
 // https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80889NED/table
@@ -17,5 +18,13 @@ export const data = {
 };
 
 export function Model_2023_Opcenten(provincie: Provincie | null): number {
-  return provincie === null ? 0 : data[provincie];
+  if (provincie === null) {
+    return 0;
+  }
+
+  if (provincie in data) {
+    return data[provincie];
+  }
+
+  throw new InvalidParameters(`provincie: ${provincie}`);
 }

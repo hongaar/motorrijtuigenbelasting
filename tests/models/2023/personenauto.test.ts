@@ -1,7 +1,7 @@
 import { Model_2023_Personenauto } from "../../../src/models/2023/personenauto.js";
 import { Brandstof, Provincie, Voertuigtype } from "../../../src/params.js";
 
-test("0/benzine", () => {
+test("0/benzine/geen_provincie", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Benzine,
@@ -85,4 +85,16 @@ test("lage_uitstoot", () => {
       gewicht: 1000,
     })
   ).toBe(53);
+});
+
+test("invalid_provincie", () => {
+  expect(() =>
+    Model_2023_Personenauto({
+      brandstof: Brandstof.Benzine,
+      elektrisch_of_waterstof: false,
+      voertuigtype: Voertuigtype.Personenauto,
+      provincie: "invalid" as Provincie,
+      gewicht: 0,
+    })
+  ).toThrow();
 });

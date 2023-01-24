@@ -1,5 +1,5 @@
+import { NotImplementedError } from "../errors.js";
 import { Brandstof, ModelParams } from "../params.js";
-import { NotImplementedError } from "./errors.js";
 
 type Tarief = {
   threshold_kg: number;

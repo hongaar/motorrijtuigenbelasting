@@ -4,6 +4,7 @@
   "repository": "github:hongaar/motorrijtuigenbelasting",
   "license": "MIT",
   "author": "Joram van den Boezem <joram@vandenboezem.nl>",
+  "sideEffects": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "types/index.d.ts",

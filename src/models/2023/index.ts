@@ -1,5 +1,5 @@
+import { NotImplementedError } from "../../errors.js";
 import { ModelParams, Voertuigtype } from "../../params.js";
-import { NotImplementedError } from "../errors.js";
 import { Model_2023_Personenauto } from "./personenauto.js";
 
 export function Model_2023(params: ModelParams) {
