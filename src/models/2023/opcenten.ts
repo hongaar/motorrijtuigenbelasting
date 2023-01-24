@@ -1,33 +1,21 @@
-import { Provincie } from "../../berekenMrb.js";
+import { Provincie } from "../../params.js";
 
 // https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80889NED/table
+export const data = {
+  [Provincie.Drenthe]: 0.92,
+  [Provincie.Flevoland]: 0.822,
+  [Provincie.Friesland]: 0.87,
+  [Provincie.Gelderland]: 0.93,
+  [Provincie.Groningen]: 0.957,
+  [Provincie.Limburg]: 0.806,
+  [Provincie["Noord-Brabant"]]: 0.808,
+  [Provincie["Noord-Holland"]]: 0.679,
+  [Provincie.Overijssel]: 0.799,
+  [Provincie.Utrecht]: 0.794,
+  [Provincie.Zeeland]: 0.823,
+  [Provincie["Zuid-Holland"]]: 0.957,
+};
+
 export function Model_2023_Opcenten(provincie: Provincie | null): number {
-  switch (provincie) {
-    case null:
-      return 0;
-    case Provincie.Drenthe:
-      return 0.92;
-    case Provincie.Flevoland:
-      return 0.822;
-    case Provincie.Friesland:
-      return 0.87;
-    case Provincie.Gelderland:
-      return 0.93;
-    case Provincie.Groningen:
-      return 0.957;
-    case Provincie.Limburg:
-      return 0.806;
-    case Provincie["Noord-Brabant"]:
-      return 0.808;
-    case Provincie["Noord-Holland"]:
-      return 0.679;
-    case Provincie.Overijssel:
-      return 0.799;
-    case Provincie.Utrecht:
-      return 0.794;
-    case Provincie.Zeeland:
-      return 0.823;
-    case Provincie["Zuid-Holland"]:
-      return 0.957;
-  }
+  return provincie === null ? 0 : data[provincie];
 }

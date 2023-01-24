@@ -1,12 +1,11 @@
+import { berekenMrb, Models } from "../src/berekenMrb.js";
 import {
-  berekenMrb,
   Brandstof,
   Gewichtsklasse,
   ModelParams,
-  Models,
   Provincie,
   Voertuigtype,
-} from "../src/berekenMrb.js";
+} from "../src/params.js";
 
 const defaultParams: ModelParams = {
   provincie: Provincie.Utrecht,

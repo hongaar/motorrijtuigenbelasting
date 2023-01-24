@@ -24,6 +24,13 @@ const bedrag = berekenMrb({
 });
 ```
 
+## Roadmap
+
+- [x] Benzine
+- [x] Geen uitstoot (elektrisch of waterstof)
+- [ ] Overige brandstoffen
+- [ ] Niet-personenauto's
+
 ## Credits
 
 ©️ Copyright 2023 [Joram van den Boezem](https://joram.dev)  

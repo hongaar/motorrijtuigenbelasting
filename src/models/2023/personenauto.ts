@@ -1,6 +1,8 @@
-import { Brandstof, ModelParams, Voertuigtype } from "../../index.js";
-import { NotImplementedError } from "./index.js";
+import { ModelParams, Voertuigtype } from "../../params.js";
+import { Model_1995_Tarieven_Benzine } from "../1995/tarieven.js";
+import { Model_Personenauto } from "../personenauto.js";
 import { Model_2023_Opcenten } from "./opcenten.js";
+import { Model_2023_Tarieven_Benzine } from "./tarieven.js";
 
 /**
  * Een personenauto moet voor de motorrijtuigenbelasting voldoen aan de volgende
@@ -47,39 +49,21 @@ export function Model_2023_Personenauto(params: ModelParams) {
 
   let bedrag: number;
 
-  /**
-   * Wet op de motorrijtuigenbelasting 1994
-   * Artikel 23
-   * https://wetten.overheid.nl/BWBR0006324/2023-01-01#HoofdstukIV
-   */
+  const grondslag = Model_Personenauto({
+    gewicht,
+    brandstof,
+    tarieven: Model_2023_Tarieven_Benzine,
+  });
 
-  if (brandstof === Brandstof.Benzine) {
-    if (gewicht <= 550) {
-      bedrag = 18.75;
-    } else if (gewicht <= 650) {
-      bedrag = 25.44;
-    } else if (gewicht <= 750) {
-      bedrag = 32.33;
-    } else if (gewicht <= 850) {
-      bedrag = 42.2;
-    } else if (gewicht > 950 && gewicht <= 3250) {
-      const factor = Math.ceil((gewicht - 900) / 100);
-      bedrag = 56.13 + 15.09 * factor;
-    } else {
-      const factor = Math.ceil((gewicht - 3300) / 100);
-      bedrag = 414.29 + 10.48 * factor;
-    }
-  } else if (brandstof === Brandstof.Diesel) {
-    throw new NotImplementedError();
-  } else {
-    throw new NotImplementedError();
-  }
+  const opcentenGrondslag = Model_Personenauto({
+    gewicht,
+    brandstof,
+    tarieven: Model_1995_Tarieven_Benzine,
+  });
 
-  /**
-   * Vermeerderen met provinciale opcenten
-   */
   const opcentenPercentage = Model_2023_Opcenten(provincie);
-  bedrag = bedrag * (1 + opcentenPercentage);
+
+  bedrag = grondslag + opcentenGrondslag * opcentenPercentage;
 
   /**
    * Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per

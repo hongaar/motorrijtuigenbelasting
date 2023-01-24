@@ -1,12 +1,6 @@
-import { ModelParams, Voertuigtype } from "../../index.js";
+import { ModelParams, Voertuigtype } from "../../params.js";
+import { NotImplementedError } from "../errors.js";
 import { Model_2023_Personenauto } from "./personenauto.js";
-
-export class NotImplementedError extends Error {
-  constructor() {
-    super("This combination of parameters is not supported yet");
-    this.name = "NotImplementedError";
-  }
-}
 
 export function Model_2023(params: ModelParams) {
   const {
