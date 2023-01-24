@@ -51,7 +51,8 @@
       "github-actions",
       "semantic-release",
       "husky",
-      "lint-staged"
+      "lint-staged",
+      "dependabot"
     ]
   }
 }
