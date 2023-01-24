@@ -1,16 +1,16 @@
 # [1.3.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.2.0...v1.3.0) (2023-01-24)
 
-
 ### Features
 
-* rdwDataToParams ([2e9f132](https://github.com/hongaar/motorrijtuigenbelasting/commit/2e9f132d820d10b1e8b026f2ff572ec7c2b79306))
+- rdwDataToParams
+  ([2e9f132](https://github.com/hongaar/motorrijtuigenbelasting/commit/2e9f132d820d10b1e8b026f2ff572ec7c2b79306))
 
 # [1.2.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.1.1...v1.2.0) (2023-01-24)
 
-
 ### Features
 
-* personenauto's ([5c29ae8](https://github.com/hongaar/motorrijtuigenbelasting/commit/5c29ae8ff9d3a1f476ae6cf580de40bac383f706))
+- personenauto's
+  ([5c29ae8](https://github.com/hongaar/motorrijtuigenbelasting/commit/5c29ae8ff9d3a1f476ae6cf580de40bac383f706))
 
 ## [1.1.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.1.0...v1.1.1) (2023-01-21)
 
