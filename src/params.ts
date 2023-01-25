@@ -35,6 +35,11 @@ export type ModelParams = {
    * af te trekken.
    */
   gewicht: Gewichtsklasse | number;
+
+  /**
+   * Reservering voor betalen naar gebruik
+   */
+  km_per_jaar?: number;
 };
 
 export enum Provincie {
