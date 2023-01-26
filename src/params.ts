@@ -20,9 +20,15 @@ export type ModelParams = {
   /**
    * "Op welke brandstof rijdt uw personenauto?"
    *
-   * Indien "elektrisch_of_waterstof" op "true", dan is dit veld "null"
+   * Indien "elektrisch_of_waterstof" op "true", dan is dit veld "null" of
+   * "undefined"
    */
-  brandstof: Brandstof | null;
+  brandstof?: Brandstof | null;
+
+  /**
+   * "Is op uw motorrijtuig de fijnstoftoeslag van toepassing?"
+   */
+  fijnstoftoeslag?: boolean;
 
   /**
    * "Wat is de gewichtsklasse van uw personenauto?"

@@ -8,7 +8,9 @@
 yarn|npm add motorrijtuigenbelasting
 ```
 
-## Gebruik
+## MRB berekenen
+
+Standaard wordt het meest recente `Model_2023` gebruikt.
 
 ```js
 import {
@@ -25,6 +27,32 @@ const bedrag = berekenMrb({
   elektrisch_of_waterstof: false,
   gewicht: 1051,
   provincie: Provincie.Utrecht,
+});
+```
+
+## Betalen naar gebruik
+
+Om een voorlopige berekening te maken voor het toekomstige "Betalen naar
+gebruik", kan `model` worden aangepast naar `Model_2030`.
+
+```js
+import {
+  berekenMrb,
+  Brandstof,
+  Models,
+  Provincie,
+  Voertuigtype,
+} from "motorrijtuigenbelasting";
+
+// voorlopige berekening voor betalen naar gebruik
+const bedrag = berekenMrb({
+  model: Models.Model_2030,
+  voertuigtype: Voertuigtype.Personenauto,
+  brandstof: Brandstof.Benzine,
+  elektrisch_of_waterstof: false,
+  gewicht: 1051,
+  provincie: Provincie.Utrecht,
+  km_per_jaar: 10_000,
 });
 ```
 

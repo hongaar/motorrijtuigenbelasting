@@ -1,4 +1,5 @@
-import { berekenMrb, Models } from "../src/berekenMrb.js";
+import { berekenMrb } from "../src/berekenMrb.js";
+import { Models } from "../src/models.js";
 import {
   Brandstof,
   Gewichtsklasse,

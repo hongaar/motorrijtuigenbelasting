@@ -77,7 +77,7 @@ test("findTarief", () => {
   expect(() => findTarief({ tarieven, afgerondGewicht: 101 })).toThrow();
 });
 
-test("Model_Personenauto/benzine", () => {
+test("Model_Personenauto/Benzine", () => {
   const tariefVanaf0 = {
     threshold_kg: 0,
     vast_euro: 10,
@@ -95,28 +95,40 @@ test("Model_Personenauto/benzine", () => {
 
   expect(
     Model_Personenauto({
-      tarieven,
+      tarieven: {
+        [Brandstof.Benzine]: tarieven,
+        [Brandstof.Diesel]: [],
+      },
       gewicht: 0,
       brandstof: Brandstof.Benzine,
     })
   ).toBe(10);
   expect(
     Model_Personenauto({
-      tarieven,
+      tarieven: {
+        [Brandstof.Benzine]: tarieven,
+        [Brandstof.Diesel]: [],
+      },
       gewicht: 550,
       brandstof: Brandstof.Benzine,
     })
   ).toBe(10);
   expect(
     Model_Personenauto({
-      tarieven,
+      tarieven: {
+        [Brandstof.Benzine]: tarieven,
+        [Brandstof.Diesel]: [],
+      },
       gewicht: 650,
       brandstof: Brandstof.Benzine,
     })
   ).toBe(20);
   expect(
     Model_Personenauto({
-      tarieven,
+      tarieven: {
+        [Brandstof.Benzine]: tarieven,
+        [Brandstof.Diesel]: [],
+      },
       gewicht: 750,
       brandstof: Brandstof.Benzine,
     })

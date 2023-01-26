@@ -1,8 +1,9 @@
 import { NotImplementedError } from "../../errors.js";
+import type { ModelOutput } from "../../output.js";
 import { ModelParams, Voertuigtype } from "../../params.js";
 import { Model_2023_Personenauto } from "./personenauto.js";
 
-export function Model_2023(params: ModelParams) {
+export function Model_2023(params: ModelParams): ModelOutput {
   const {
     // provincie,
     // brandstof,

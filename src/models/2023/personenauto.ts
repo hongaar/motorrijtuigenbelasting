@@ -1,8 +1,18 @@
+import { InvalidParameters } from "../../errors.js";
+import { berekenOutput, ModelOutputOnderdelen } from "../../output.js";
 import { ModelParams, Voertuigtype } from "../../params.js";
-import { Model_1995_Tarieven_Benzine } from "../1995/tarieven.js";
+import { Model_1995_Tarieven } from "../1995/tarieven.js";
 import { Model_Personenauto } from "../personenauto.js";
 import { Model_2023_Opcenten } from "./opcenten.js";
-import { Model_2023_Tarieven_Benzine } from "./tarieven.js";
+import { Model_2023_Tarieven } from "./tarieven.js";
+
+/**
+ * Het aantal opcenten bedraagt voor de belastingtijdvakken die na 31 december
+ * 2011 aanvangen ten hoogste 125,80.
+ *
+ * https://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222&z=2023-01-01&g=2023-01-01
+ */
+const MAX_OPCENTEN = 125.8;
 
 /**
  * Een personenauto moet voor de motorrijtuigenbelasting voldoen aan de volgende
@@ -28,12 +38,14 @@ export function Model_2023_Personenauto(params: ModelParams) {
     voertuigtype,
   } = params;
 
-  /**
-   * Voor een Personenauto die volledig en uitsluitend op elektriciteit of
-   * waterstof rijdt, betaalt u geen motorrijtuigenbelasting.
-   */
   if (elektrisch_of_waterstof) {
-    return 0;
+    return berekenOutput([
+      {
+        omschrijving:
+          "Voor een Personenauto die volledig en uitsluitend op elektriciteit of waterstof rijdt, betaalt u geen motorrijtuigenbelasting.",
+        subtotaal: 0,
+      },
+    ]);
   }
 
   if (
@@ -41,29 +53,67 @@ export function Model_2023_Personenauto(params: ModelParams) {
     Voertuigtype["Personenauto met een CO2-uitstoot van 0 gr/km"]
   ) {
     /**
-     * Hebt u een personenauto met een CO2-uitstoot van 0 gram per kilometer? Dan
-     * betaalt u geen motorrijtuigenbelasting.
+     *
      */
-    return 0;
+    return berekenOutput([
+      {
+        omschrijving:
+          "Hebt u een personenauto met een CO2-uitstoot van 0 gram per kilometer? Dan betaalt u geen motorrijtuigenbelasting.",
+        subtotaal: 0,
+      },
+    ]);
   }
 
-  let bedrag: number;
+  if (!brandstof) {
+    throw new InvalidParameters("Brandstof is verplicht");
+  }
+
+  let subtotaal: number;
+  const onderdelen: ModelOutputOnderdelen = [];
 
   const grondslag = Model_Personenauto({
     gewicht,
     brandstof,
-    tarieven: Model_2023_Tarieven_Benzine,
+    tarieven: Model_2023_Tarieven,
   });
+
+  onderdelen.push({
+    omschrijving: `Motorrijtuigenbelasting voor een personenauto die op ${brandstof.toLowerCase()} rijdt`,
+    waarde: grondslag,
+    subtotaal: grondslag,
+  });
+  subtotaal = grondslag;
 
   const opcentenGrondslag = Model_Personenauto({
     gewicht,
     brandstof,
-    tarieven: Model_1995_Tarieven_Benzine,
+    tarieven: Model_1995_Tarieven,
   });
 
   const opcentenPercentage = Model_2023_Opcenten(provincie);
 
-  bedrag = grondslag + opcentenGrondslag * opcentenPercentage;
+  onderdelen.push({
+    omschrijving: `Motorrijtuigenbelasting voor een personenauto die op ${brandstof.toLowerCase()} rijdt (grondslag 1995)`,
+    waarde: opcentenGrondslag,
+  });
+
+  onderdelen.push({
+    omschrijving: "Provinciale opcenten (berekend over grondslag 1995)",
+    waarde: `${opcentenPercentage * 100}%`,
+    subtotaal: opcentenGrondslag * opcentenPercentage,
+  });
+
+  if (opcentenGrondslag * opcentenPercentage > MAX_OPCENTEN) {
+    onderdelen.push({
+      omschrijving: "Provinciale opcenten maximum (correctie)",
+      waarde: MAX_OPCENTEN,
+      subtotaal: MAX_OPCENTEN - opcentenGrondslag * opcentenPercentage,
+    });
+
+    subtotaal += MAX_OPCENTEN;
+  } else {
+    subtotaal += opcentenGrondslag * opcentenPercentage;
+  }
 
   /**
    * Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per
@@ -74,8 +124,12 @@ export function Model_2023_Personenauto(params: ModelParams) {
     voertuigtype ===
     Voertuigtype["Personenauto met een CO2-uitstoot van 1 t/m 50 gr/km"]
   ) {
-    bedrag = bedrag / 2;
+    onderdelen.push({
+      omschrijving:
+        "Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per kilometer? Dan geldt een halftarief. Dit betekent dat u de helft betaalt van het tarief voor een gewone personenauto. (correctie)",
+      subtotaal: (subtotaal / 2) * -1,
+    });
   }
 
-  return Math.floor(bedrag);
+  return berekenOutput(onderdelen);
 }

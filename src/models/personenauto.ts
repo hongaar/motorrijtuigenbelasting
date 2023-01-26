@@ -46,33 +46,43 @@ export function findTarief({
 export function Model_Personenauto(params: {
   gewicht: ModelParams["gewicht"];
   brandstof: ModelParams["brandstof"];
-  tarieven: Tarief[];
+  tarieven: {
+    [Brandstof.Benzine]: Tarief[];
+    [Brandstof.Diesel]: Tarief[];
+  };
 }) {
-  const { brandstof, tarieven: tarieven } = params;
+  const { brandstof, tarieven } = params;
   const afgerondGewicht = rondGewichtAf(params.gewicht);
-  const tarief = findTarief({ tarieven, afgerondGewicht });
-
-  if (!tarief) {
-    throw new Error("No tarief found");
-  }
 
   let bedrag: number;
 
   switch (brandstof) {
     case Brandstof.Benzine:
+    case Brandstof.Diesel:
+      const tarief = findTarief({
+        tarieven: tarieven[brandstof],
+        afgerondGewicht,
+      });
+
+      if (!tarief) {
+        throw new Error("No tarief found");
+      }
+
       bedrag = tarief.vast_euro;
+
       if (tarief.variabel) {
         const factor = Math.ceil(
           (afgerondGewicht -
             (tarief.variabel.ondergrens || tarief.threshold_kg)) /
             (tarief.variabel.per_kg || 100)
         );
-        const variabel = tarief.variabel.euro * factor;
+        const variabel = Math.max(0, tarief.variabel.euro * factor);
+
         bedrag = bedrag + variabel;
       }
 
       return bedrag;
-    case Brandstof.Diesel:
+
     case Brandstof["LPG en overige (behalve elektriciteit en waterstof)"]:
     case Brandstof["LPG3 en Aardgas"]:
     default:

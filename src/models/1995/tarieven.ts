@@ -1,3 +1,5 @@
+import { Brandstof } from "../../params.js";
+
 const euroGuldenWisselkoers = 2.20371;
 
 /**
@@ -33,8 +35,31 @@ export const Model_1995_Tarieven_Benzine = [
     threshold_kg: 1000,
     vast_euro: 100.95 / euroGuldenWisselkoers,
     variabel: {
-      ondergrens: 1000,
       euro: 25.75 / euroGuldenWisselkoers,
     },
   },
 ];
+
+/**
+ * Wet op de motorrijtuigenbelasting 1994
+ * Artikel 23
+ * Geldig in 1995
+ * Took some reverse engineering:
+ * - https://zoek.officielebekendmakingen.nl/stb-1994-17.pdf
+ * - https://zoek.officielebekendmakingen.nl/stb-1995-152.html
+ */
+export const Model_1995_Tarieven_Diesel = [
+  {
+    threshold_kg: 0,
+    vast_euro: 87.5 / euroGuldenWisselkoers,
+    variabel: {
+      ondergrens: 500,
+      euro: 17.25 / euroGuldenWisselkoers,
+    },
+  },
+];
+
+export const Model_1995_Tarieven = {
+  [Brandstof.Benzine]: Model_1995_Tarieven_Benzine,
+  [Brandstof.Diesel]: Model_1995_Tarieven_Diesel,
+};
