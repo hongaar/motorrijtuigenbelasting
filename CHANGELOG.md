@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.4.0...v1.5.0) (2023-01-26)
+
+
+### Features
+
+* diesel ([06b3447](https://github.com/hongaar/motorrijtuigenbelasting/commit/06b3447e13440c9c70b3794a755eae9abf77f731))
+
 # [1.4.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.3.0...v1.4.0) (2023-01-25)
 
 
