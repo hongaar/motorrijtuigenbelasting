@@ -2,6 +2,17 @@
 
 **Motorrijtuigenbelasting (MRB) berekenen in JavaScript**
 
+---
+
+> **Warning**
+>
+> ## ⚠️ In ontwikkeling ⚠️
+>
+> Deze module is nog in ontwikkeling en kan momenteel niet worden gebruikt voor
+> het berekenen van de MRB.
+
+---
+
 ## Installatie
 
 ```bash
