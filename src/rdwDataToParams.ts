@@ -128,12 +128,12 @@ function toVoertuigType(rdwData: RdwData) {
       return Voertuigtype.Personenauto;
 
     case "N1":
-      // @todo: ??
+      // ??
       return Voertuigtype["Bestelauto ondernemer"];
 
     case "N2":
     case "N3":
-      // @todo: ??
+      // ??
       return Voertuigtype.Vrachtauto;
 
     default:

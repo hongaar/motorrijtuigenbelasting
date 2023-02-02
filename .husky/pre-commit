@@ -2,3 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn lint-staged
+yarn todos && git add TODO.md
+yarn prettier --write TODO.md && git add TODO.md

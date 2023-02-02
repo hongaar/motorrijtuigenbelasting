@@ -1,6 +1,10 @@
 import { Model_2023_Personenauto } from "../../../src/models/2023/personenauto.js";
 import { Brandstof, Provincie, Voertuigtype } from "../../../src/params.js";
 
+/**
+ * @todo hier worden opcenten niet meegrekend. maar dat zou wel moeten. zie:
+ * http://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222a&lid=4
+ */
 test("0/Benzine/geen_provincie", () => {
   expect(
     Model_2023_Personenauto({
@@ -49,6 +53,9 @@ test("5000/Benzine/Utrecht", () => {
   ).toBe(999);
 });
 
+/**
+ * @todo alle diesel tests falen
+ */
 test.failing("0/Diesel/geen_fijnstoftoeslag/geen_provincie", () => {
   expect(
     Model_2023_Personenauto({

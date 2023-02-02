@@ -86,6 +86,12 @@ const params = rdwDataToParams({ basis, brandstof });
 const bedrag = berekenMrb({ ...params, provincie: Provincie.Utrecht });
 ```
 
+## Onregelmatigheden
+
+Onregelmatigheden zijn verschillen van dit algoritme met de
+[officiele tool van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/nl/auto-en-vervoer/content/hulpmiddel-motorrijtuigenbelasting-berekenen).
+Zie [TODO.md](TODO.md) voor een lijst met onregelmatigheden.
+
 ## Roadmap
 
 - [x] Benzine
