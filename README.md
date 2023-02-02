@@ -4,9 +4,7 @@
 
 ---
 
-> **Warning**
->
-> ## ⚠️ In ontwikkeling ⚠️
+> **Warning**: **in ontwikkeling**
 >
 > Deze module is nog in ontwikkeling en kan momenteel niet worden gebruikt voor
 > het berekenen van de MRB.
