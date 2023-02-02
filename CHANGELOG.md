@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.0...v1.5.1) (2023-02-02)
+
+
+### Bug Fixes
+
+* remove max opcenten ([b642cdb](https://github.com/hongaar/motorrijtuigenbelasting/commit/b642cdbe72a8ac19f41cdabfdbe3ee5ef53518dd))
+
 # [1.5.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.4.0...v1.5.0) (2023-01-26)
 
 
