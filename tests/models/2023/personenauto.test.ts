@@ -147,7 +147,25 @@ test("lage_uitstoot", () => {
   ).toBe(53);
 });
 
-test("invalid_provincie", () => {
+test("invalid parameters", () => {
+  expect(() =>
+    Model_2023_Personenauto({
+      brandstof: "invalid" as Brandstof,
+      elektrisch_of_waterstof: false,
+      voertuigtype: Voertuigtype.Personenauto,
+      provincie: Provincie.Utrecht,
+      gewicht: 0,
+    })
+  ).toThrow();
+  expect(() =>
+    Model_2023_Personenauto({
+      brandstof: Brandstof.Benzine,
+      elektrisch_of_waterstof: false,
+      voertuigtype: "invalid" as Voertuigtype,
+      provincie: Provincie.Utrecht,
+      gewicht: 0,
+    })
+  ).toThrow();
   expect(() =>
     Model_2023_Personenauto({
       brandstof: Brandstof.Benzine,
@@ -155,6 +173,15 @@ test("invalid_provincie", () => {
       voertuigtype: Voertuigtype.Personenauto,
       provincie: "invalid" as Provincie,
       gewicht: 0,
+    })
+  ).toThrow();
+  expect(() =>
+    Model_2023_Personenauto({
+      brandstof: Brandstof.Benzine,
+      elektrisch_of_waterstof: false,
+      voertuigtype: Voertuigtype.Personenauto,
+      provincie: "invalid" as Provincie,
+      gewicht: "invalid" as unknown as number,
     })
   ).toThrow();
 });

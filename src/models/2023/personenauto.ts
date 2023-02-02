@@ -7,14 +7,6 @@ import { Model_2023_Opcenten } from "./opcenten.js";
 import { Model_2023_Tarieven } from "./tarieven.js";
 
 /**
- * Het aantal opcenten bedraagt voor de belastingtijdvakken die na 31 december
- * 2011 aanvangen ten hoogste 125,80.
- *
- * https://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222&z=2023-01-01&g=2023-01-01
- */
-const MAX_OPCENTEN = 125.8;
-
-/**
  * Een personenauto moet voor de motorrijtuigenbelasting voldoen aan de volgende
  * eisen:
  * - 3 of meer wielen
@@ -103,17 +95,7 @@ export function Model_2023_Personenauto(params: ModelParams) {
     subtotaal: opcentenGrondslag * opcentenPercentage,
   });
 
-  if (opcentenGrondslag * opcentenPercentage > MAX_OPCENTEN) {
-    onderdelen.push({
-      omschrijving: "Provinciale opcenten maximum (correctie)",
-      waarde: MAX_OPCENTEN,
-      subtotaal: MAX_OPCENTEN - opcentenGrondslag * opcentenPercentage,
-    });
-
-    subtotaal += MAX_OPCENTEN;
-  } else {
-    subtotaal += opcentenGrondslag * opcentenPercentage;
-  }
+  subtotaal += opcentenGrondslag * opcentenPercentage;
 
   /**
    * Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per
@@ -129,7 +111,13 @@ export function Model_2023_Personenauto(params: ModelParams) {
         "Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per kilometer? Dan geldt een halftarief. Dit betekent dat u de helft betaalt van het tarief voor een gewone personenauto. (correctie)",
       subtotaal: (subtotaal / 2) * -1,
     });
+
+    return berekenOutput(onderdelen);
   }
 
-  return berekenOutput(onderdelen);
+  if (voertuigtype === Voertuigtype["Personenauto"]) {
+    return berekenOutput(onderdelen);
+  }
+
+  throw new InvalidParameters(`voertuigtype: ${voertuigtype}`);
 }
