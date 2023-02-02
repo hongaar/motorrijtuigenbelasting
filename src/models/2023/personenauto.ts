@@ -57,10 +57,9 @@ export function Model_2023_Personenauto(params: ModelParams) {
   }
 
   if (!brandstof) {
-    throw new InvalidParameters("Brandstof is verplicht");
+    throw new InvalidParameters("brandstof is verplicht");
   }
 
-  let subtotaal: number;
   const onderdelen: ModelOutputOnderdelen = [];
 
   const grondslag = Model_Personenauto({
@@ -74,7 +73,6 @@ export function Model_2023_Personenauto(params: ModelParams) {
     waarde: grondslag,
     subtotaal: grondslag,
   });
-  subtotaal = grondslag;
 
   const opcentenGrondslag = Model_Personenauto({
     gewicht,
@@ -82,20 +80,18 @@ export function Model_2023_Personenauto(params: ModelParams) {
     tarieven: Model_1995_Tarieven,
   });
 
-  const opcentenPercentage = Model_2023_Opcenten(provincie);
-
   onderdelen.push({
     omschrijving: `Motorrijtuigenbelasting voor een personenauto die op ${brandstof.toLowerCase()} rijdt (grondslag 1995)`,
     waarde: opcentenGrondslag,
   });
+
+  const opcentenPercentage = Model_2023_Opcenten(provincie);
 
   onderdelen.push({
     omschrijving: "Provinciale opcenten (berekend over grondslag 1995)",
     waarde: `${opcentenPercentage * 100}%`,
     subtotaal: opcentenGrondslag * opcentenPercentage,
   });
-
-  subtotaal += opcentenGrondslag * opcentenPercentage;
 
   /**
    * Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per
@@ -109,7 +105,7 @@ export function Model_2023_Personenauto(params: ModelParams) {
     onderdelen.push({
       omschrijving:
         "Hebt u een personenauto met een CO2-uitstoot van 1 tot en met 50 gram per kilometer? Dan geldt een halftarief. Dit betekent dat u de helft betaalt van het tarief voor een gewone personenauto. (correctie)",
-      subtotaal: (subtotaal / 2) * -1,
+      subtotaal: berekenOutput(onderdelen)._precise / -2,
     });
 
     return berekenOutput(onderdelen);
