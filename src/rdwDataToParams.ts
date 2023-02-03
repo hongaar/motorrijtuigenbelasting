@@ -152,6 +152,13 @@ function toBrandstof(rdwData: RdwData) {
     throw new InvalidRdwData();
   }
 
+  if (
+    brandstof.length === 1 &&
+    brandstof[0]?.brandstof_omschrijving === "Diesel"
+  ) {
+    return Brandstof.Diesel;
+  }
+
   //   const sortedBrandstoffen = [...brandstof].sort((a, b) =>
   //     Number(a.brandstof_volgnummer) > Number(b.brandstof_volgnummer) ? 1 : -1
   //   );

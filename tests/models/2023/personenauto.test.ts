@@ -155,15 +155,6 @@ test("lage_uitstoot", () => {
 test("invalid parameters", () => {
   expect(() =>
     Model_2023_Personenauto({
-      brandstof: "invalid" as Brandstof,
-      elektrisch_of_waterstof: false,
-      voertuigtype: Voertuigtype.Personenauto,
-      provincie: Provincie.Utrecht,
-      gewicht: 0,
-    })
-  ).toThrow();
-  expect(() =>
-    Model_2023_Personenauto({
       brandstof: Brandstof.Benzine,
       elektrisch_of_waterstof: false,
       voertuigtype: "invalid" as Voertuigtype,

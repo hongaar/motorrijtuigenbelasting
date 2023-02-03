@@ -5,9 +5,14 @@ export type ModelOutputOnderdelen = {
   omschrijving: string;
 
   /**
+   * Wet referenties die van toepassing zijn op dit onderdeel.
+   */
+  referentie?: { titel: string; url: string };
+
+  /**
    * Waarde van dit onderdeel, niet opgenomen in subtotaal.
    */
-  waarde?: number | string;
+  waarde?: string;
 
   /**
    * De motorrijtuigenbelasting per tijdvak van 3 maanden in euro's voor dit
