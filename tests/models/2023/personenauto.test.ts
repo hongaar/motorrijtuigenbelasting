@@ -2,10 +2,11 @@ import { Model_2023_Personenauto } from "../../../src/models/2023/personenauto.j
 import { Brandstof, Provincie, Voertuigtype } from "../../../src/params.js";
 
 /**
- * @todo hier worden opcenten niet meegrekend. maar dat zou wel moeten. zie:
+ * @todo indien niet woonachtig in nederland, worden opcenten niet meegerekend
+ * in baseline. volgens de wet zou dat wel moeten. missen wij iets?
  * http://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222a&lid=4
  */
-test("0/Benzine/geen_provincie", () => {
+test.failing("0/Benzine/geen_provincie", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Benzine,
@@ -53,10 +54,7 @@ test("5000/Benzine/Utrecht", () => {
   ).toBe(999);
 });
 
-/**
- * @todo alle diesel tests falen
- */
-test.failing("0/Diesel/geen_fijnstoftoeslag/geen_provincie", () => {
+test("0/Diesel/geen_fijnstoftoeslag/geen_provincie", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Diesel,
@@ -69,7 +67,7 @@ test.failing("0/Diesel/geen_fijnstoftoeslag/geen_provincie", () => {
   ).toBe(102);
 });
 
-test.failing("0/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
+test("0/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Diesel,
@@ -82,7 +80,7 @@ test.failing("0/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
   ).toBe(103);
 });
 
-test.failing("1000/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
+test("1000/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Diesel,
@@ -95,7 +93,7 @@ test.failing("1000/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
   ).toBe(255);
 });
 
-test.failing("5000/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
+test("5000/Diesel/geen_fijnstoftoeslag/Utrecht", () => {
   expect(
     Model_2023_Personenauto({
       brandstof: Brandstof.Diesel,

@@ -1,4 +1,4 @@
-import { Brandstof } from "../../params.js";
+import { Brandstof, Voertuigtype } from "../../params.js";
 
 /**
  * Wet op de motorrijtuigenbelasting 1994
@@ -6,7 +6,7 @@ import { Brandstof } from "../../params.js";
  * Geldig op 1-1-2023
  * https://wetten.overheid.nl/BWBR0006324/2023-01-01#HoofdstukIV
  */
-export const Model_2023_Tarieven_Benzine = [
+export const Model_2023_Tarieven_Personenauto = [
   {
     threshold_kg: 0,
     vast_euro: 18.75,
@@ -45,7 +45,7 @@ export const Model_2023_Tarieven_Benzine = [
  * Geldig op 1-1-2023
  * https://wetten.overheid.nl/BWBR0006324/2023-01-01#HoofdstukIV
  */
-export const Model_2023_Tarieven_Diesel = [
+export const Model_2023_Tarieven_Personenauto_Toeslag_Diesel = [
   {
     threshold_kg: 0,
     vast_euro: 73.52,
@@ -72,6 +72,10 @@ export const Model_2023_Tarieven_Diesel = [
 ];
 
 export const Model_2023_Tarieven = {
-  [Brandstof.Benzine]: Model_2023_Tarieven_Benzine,
-  [Brandstof.Diesel]: Model_2023_Tarieven_Diesel,
+  [Voertuigtype.Personenauto]: {
+    basis: Model_2023_Tarieven_Personenauto,
+    toeslagen: {
+      [Brandstof.Diesel]: Model_2023_Tarieven_Personenauto_Toeslag_Diesel,
+    },
+  },
 };

@@ -89,15 +89,18 @@ const bedrag = berekenMrb({ ...params, provincie: Provincie.Utrecht });
 ## Onregelmatigheden
 
 Onregelmatigheden zijn verschillen van dit algoritme met de
-[officiele tool van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/nl/auto-en-vervoer/content/hulpmiddel-motorrijtuigenbelasting-berekenen).
-Zie [TODO.md](TODO.md) voor een lijst met onregelmatigheden.
+[officiele tool van de Belastingdienst](https://www.belastingdienst.nl/wps/wcm/connect/nl/auto-en-vervoer/content/hulpmiddel-motorrijtuigenbelasting-berekenen)
+(_baseline_). Zie [TODO.md](TODO.md) voor een lijst met onregelmatigheden.
 
 ## Roadmap
 
-- [x] Benzine
-- [x] Geen uitstoot (elektrisch of waterstof)
-- [ ] Overige brandstoffen
-- [ ] Niet-personenauto's
+- [ ] Personenauto
+  - [x] Benzine
+  - [x] Diesel
+  - [x] Geen uitstoot (elektrisch of waterstof)
+  - [x] Lage uitstoot (halftarief)
+  - [ ] Overige brandstoffen
+- [ ] Overige voertuigtypes
 
 ## Credits
 

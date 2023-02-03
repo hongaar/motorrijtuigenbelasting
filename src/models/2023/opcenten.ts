@@ -18,8 +18,15 @@ export const data = {
 };
 
 export function Model_2023_Opcenten(provincie: Provincie | null): number {
+  /**
+   * De houders van motorrijtuigen die niet hier te lande wonen of gevestigd
+   * zijn, maar die wel aan de heffing van motorrijtuigenbelasting zijn
+   * onderworpen, worden voor de heffing van opcenten geacht te wonen of te zijn
+   * gevestigd in een provincie die het laagste aantal opcenten heft.
+   * http://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222a&lid=4
+   */
   if (provincie === null) {
-    return 0;
+    return Math.min(...Object.values(data));
   }
 
   if (provincie in data) {

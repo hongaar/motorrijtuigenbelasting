@@ -65,7 +65,7 @@ export function Model_2023_Personenauto(params: ModelParams) {
   const grondslag = Model_Personenauto({
     gewicht,
     brandstof,
-    tarieven: Model_2023_Tarieven,
+    tarieven: Model_2023_Tarieven[Voertuigtype.Personenauto],
   });
 
   onderdelen.push({
@@ -77,7 +77,8 @@ export function Model_2023_Personenauto(params: ModelParams) {
   const opcentenGrondslag = Model_Personenauto({
     gewicht,
     brandstof,
-    tarieven: Model_1995_Tarieven,
+    tarieven: Model_1995_Tarieven[Voertuigtype.Personenauto],
+    brandstoftoeslag: false,
   });
 
   onderdelen.push({

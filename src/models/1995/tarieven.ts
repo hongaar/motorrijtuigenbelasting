@@ -1,4 +1,4 @@
-import { Brandstof } from "../../params.js";
+import { Brandstof, Voertuigtype } from "../../params.js";
 
 const euroGuldenWisselkoers = 2.20371;
 
@@ -10,7 +10,7 @@ const euroGuldenWisselkoers = 2.20371;
  * - https://zoek.officielebekendmakingen.nl/stb-1994-17.pdf
  * - https://zoek.officielebekendmakingen.nl/stb-1995-152.html
  */
-export const Model_1995_Tarieven_Benzine = [
+export const Model_1995_Tarieven_Personenauto = [
   {
     threshold_kg: 0,
     vast_euro: 31.95 / euroGuldenWisselkoers,
@@ -48,7 +48,7 @@ export const Model_1995_Tarieven_Benzine = [
  * - https://zoek.officielebekendmakingen.nl/stb-1994-17.pdf
  * - https://zoek.officielebekendmakingen.nl/stb-1995-152.html
  */
-export const Model_1995_Tarieven_Diesel = [
+export const Model_1995_Tarieven_Personenauto_Toeslag_Diesel = [
   {
     threshold_kg: 0,
     vast_euro: 87.5 / euroGuldenWisselkoers,
@@ -60,6 +60,10 @@ export const Model_1995_Tarieven_Diesel = [
 ];
 
 export const Model_1995_Tarieven = {
-  [Brandstof.Benzine]: Model_1995_Tarieven_Benzine,
-  [Brandstof.Diesel]: Model_1995_Tarieven_Diesel,
+  [Voertuigtype.Personenauto]: {
+    basis: Model_1995_Tarieven_Personenauto,
+    toeslagen: {
+      [Brandstof.Diesel]: Model_1995_Tarieven_Personenauto_Toeslag_Diesel,
+    },
+  },
 };
