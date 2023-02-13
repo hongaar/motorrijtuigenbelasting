@@ -31,7 +31,7 @@
     "@semantic-release/changelog": "6.0.2",
     "@semantic-release/git": "10.0.1",
     "@types/jest": "29.4.0",
-    "@types/node": "18.11.19",
+    "@types/node": "18.13.0",
     "@types/prettier": "^2",
     "@types/semantic-release": "^20",
     "husky": "8.0.3",
