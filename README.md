@@ -4,8 +4,8 @@
 **Table of Contents** _generated with
 [DocToc](https://github.com/thlorenz/doctoc)_
 
-- [@motorrijtuigenbelasting](#motorrijtuigenbelasting)
+- [@motorrijtuigenbelasting/rdw](#motorrijtuigenbelastingrdw)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# @motorrijtuigenbelasting
+# @motorrijtuigenbelasting/rdw

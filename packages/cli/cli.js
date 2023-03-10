@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
-import { cli } from "./dist/cli.js";
+import cli from "./dist/index.js";
 
-cli.run().catch(console.error);
+cli.run().catch((error) => {
+  // console.error(String(error))
+  console.error(error);
+});
