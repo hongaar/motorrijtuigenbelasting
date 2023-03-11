@@ -1,7 +1,8 @@
-import cli from "../src/index.js";
+import { jest } from "@jest/globals";
+import { app } from "../src/index.js";
 
-let outputSpy: jest.MockInstance<any, any>;
-let errorSpy: jest.MockInstance<any, any>;
+let outputSpy: jest.SpiedFunction<typeof console.log>;
+let errorSpy: jest.SpiedFunction<typeof console.error>;
 
 beforeEach(() => {
   outputSpy = jest.spyOn(console, "log").mockImplementation(() => {});
@@ -13,7 +14,9 @@ afterEach(() => {
   errorSpy.mockRestore();
 });
 
-test("command should return the kenteken", async () => {
-  await cli.run("--kenteken x");
-  expect(outputSpy.mock.calls[0][0]).toStrictEqual({ kenteken: "x" });
+test("requires rdw-app-token", async () => {
+  await expect(() =>
+    app.run('--kenteken x --rdw-app-token ""')
+  ).rejects.toThrow("Invalid argument (missing rdw-app-token)");
+  // expect(outputSpy.mock.calls[0]![0]).toStrictEqual({ kenteken: "x" });
 });

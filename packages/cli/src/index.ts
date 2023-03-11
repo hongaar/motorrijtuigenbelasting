@@ -161,4 +161,4 @@ const cmd = command()
     }
   );
 
-export default program().add(cmd);
+export const app = program().add(cmd);

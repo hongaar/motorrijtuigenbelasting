@@ -82,7 +82,6 @@ export function personenauto(params: Params): ModelOutput {
     weight,
     rates,
   });
-
   output.push({
     name: "Motorrijtuigenbelasting",
     description: "Motorrijtuigenbelasting voor een personenauto",
@@ -99,7 +98,6 @@ export function personenauto(params: Params): ModelOutput {
       weight,
       rates: surtaxes?.[PropulsionType.Diesel] || [],
     });
-
     output.push({
       name: "Brandstoftoeslag",
       description: "Brandstoftoeslag voor een personenauto rijdend op diesel",
@@ -116,7 +114,6 @@ export function personenauto(params: Params): ModelOutput {
     weight,
     rates: rateMap1995[VehicleType.Personenauto].rates,
   });
-
   output.push({
     name: "Grondslag opcenten",
     description: `Motorrijtuigenbelasting (1995) voor een personenauto, zijnde € ${provinceSurtax.toFixed(
@@ -129,7 +126,6 @@ export function personenauto(params: Params): ModelOutput {
   });
 
   const opcentenPercentage = provinceSurtaxPercentage(province);
-
   output.push({
     name: "Opcenten",
     description: `Provinciale opcenten voor ${
@@ -159,7 +155,8 @@ export function personenauto(params: Params): ModelOutput {
           "Artikel 23b, eerste lid, Wet op de motorrijtuigenbelasting 1994",
         url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=2&artikel=23b&z=2023-01-01&g=2023-01-01",
       },
-      subtotal: calculateTotal(output, { period: Period.quarter }).total / -2,
+      subtotal:
+        calculateTotal(output, { period: Period.quarter }).unrounded! / -2,
       unit: Unit.euro_per_quarter,
     });
   }

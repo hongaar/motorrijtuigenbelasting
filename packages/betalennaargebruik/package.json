@@ -16,8 +16,8 @@
     "build:watch": "tsc --watch",
     "clean": "rm -rf dist && rm -rf types",
     "prepublish": "yarn build",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
   },
   "devDependencies": {
     "@types/jest": "29.4.0",
