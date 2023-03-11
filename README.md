@@ -1,20 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-**Table of Contents** _generated with
-[DocToc](https://github.com/thlorenz/doctoc)_
-
-- [motorrijtuigenbelasting \*](#motorrijtuigenbelasting-)
-  - [Installatie](#installatie)
-  - [MRB berekenen](#mrb-berekenen)
-  - [Betalen naar gebruik](#betalen-naar-gebruik)
-  - [Gebruik met RDW data](#gebruik-met-rdw-data)
-  - [Onregelmatigheden](#onregelmatigheden)
-  - [Roadmap](#roadmap)
-  - [Credits](#credits)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # motorrijtuigenbelasting [![npm](https://img.shields.io/npm/v/motorrijtuigenbelasting)](https://www.npmjs.com/package/motorrijtuigenbelasting)
 
 **Motorrijtuigenbelasting (MRB) berekenen in JavaScript**
@@ -32,6 +15,19 @@
 > het berekenen van de MRB.
 
 ---
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installatie](#installatie)
+- [MRB berekenen](#mrb-berekenen)
+- [Betalen naar gebruik](#betalen-naar-gebruik)
+- [Gebruik met RDW data](#gebruik-met-rdw-data)
+- [Onregelmatigheden](#onregelmatigheden)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installatie
 
