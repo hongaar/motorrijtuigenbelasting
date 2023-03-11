@@ -1,16 +1,16 @@
 ## [1.5.3](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.2...v1.5.3) (2023-02-03)
 
-
 ### Bug Fixes
 
-* misc ([9fb9486](https://github.com/hongaar/motorrijtuigenbelasting/commit/9fb9486445f6476f129c6128651327175cfe0428))
+- misc
+  ([9fb9486](https://github.com/hongaar/motorrijtuigenbelasting/commit/9fb9486445f6476f129c6128651327175cfe0428))
 
 ## [1.5.2](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.1...v1.5.2) (2023-02-03)
 
-
 ### Bug Fixes
 
-* diesel ([f443519](https://github.com/hongaar/motorrijtuigenbelasting/commit/f443519715127b4f1febb76acdff532723799e41))
+- diesel
+  ([f443519](https://github.com/hongaar/motorrijtuigenbelasting/commit/f443519715127b4f1febb76acdff532723799e41))
 
 ## [1.5.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.0...v1.5.1) (2023-02-02)
 

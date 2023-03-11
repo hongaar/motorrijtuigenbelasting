@@ -4,12 +4,30 @@
 
 ---
 
+> **Warning**: **API has changed**
+>
+> A new version is being prepared, which changes the API significantly. The
+> README has not been updated yet to reflect these changes.
+
 > **Warning**: **in ontwikkeling**
 >
 > Deze module is nog in ontwikkeling en kan momenteel niet worden gebruikt voor
 > het berekenen van de MRB.
 
 ---
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installatie](#installatie)
+- [MRB berekenen](#mrb-berekenen)
+- [Betalen naar gebruik](#betalen-naar-gebruik)
+- [Gebruik met RDW data](#gebruik-met-rdw-data)
+- [Onregelmatigheden](#onregelmatigheden)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installatie
 
