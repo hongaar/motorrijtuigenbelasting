@@ -15,8 +15,8 @@ import yaml from "js-yaml";
 const cmd = command()
   .default()
   .description("Calculate the tax (motorrijtuigenbelasting) for a car")
-  .option("kenteken", {
-    description: "The license plate number of the car",
+  .option("vehicle-id", {
+    description: "The vehicle id/license plate number (kenteken) of the car",
     type: "string",
   })
   .option("rdw-app-token", {
@@ -65,7 +65,7 @@ const cmd = command()
   })
   .action(
     async ({
-      kenteken,
+      "vehicle-id": vehicleId,
       "rdw-app-token": rdwAppToken,
       "vehicle-type": vehicleType,
       weight,
@@ -78,7 +78,7 @@ const cmd = command()
     }) => {
       let params: Params;
 
-      if (kenteken) {
+      if (vehicleId) {
         if (!rdwAppToken) {
           throw new InvalidArgument("missing rdw-app-token");
         }
@@ -94,7 +94,7 @@ const cmd = command()
           );
         }
 
-        params = await vehicleIdToParams(kenteken, rdwAppToken);
+        params = await vehicleIdToParams(vehicleId, rdwAppToken);
       } else {
         params = {
           vehicleType,
@@ -114,21 +114,23 @@ const cmd = command()
       switch (format) {
         case "js":
           console.dir(
-            { kenteken, params, mrb2023: mrb2023results },
+            { vehicleId, params, mrb2023: mrb2023results },
             { depth: null }
           );
           break;
         case "json":
           console.log(
             JSON.stringify(
-              { kenteken, params, mrb2023: mrb2023results },
+              { vehicleId, params, mrb2023: mrb2023results },
               null,
               2
             )
           );
           break;
         case "yaml":
-          console.log(yaml.dump({ kenteken, params, mrb2023: mrb2023results }));
+          console.log(
+            yaml.dump({ vehicleId, params, mrb2023: mrb2023results })
+          );
           break;
         case "table":
           console.log("Input:");
