@@ -11,6 +11,8 @@
 
 ---
 
+## Table of contents
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -20,19 +22,23 @@
 - [SDK](#sdk)
   - [Installation](#installation-1)
   - [Usage](#usage-1)
-- [Credits](#credits)
+- [Contributing](#contributing)
+  - [Roadmap](#roadmap)
+  - [Development](#development)
+  - [Devcontainer](#devcontainer)
+  - [Credits](#credits)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## CLI
+# CLI
 
-### Installation
+## Installation
 
 ```bash
 yarn|npm add @motorrijtuigenbelasting/cli
 ```
 
-### Usage
+## Usage
 
 Show help:
 
@@ -66,9 +72,9 @@ yarn dlx|npx @motorrijtuigenbelasting/cli \
 > **Note**: App token can be obtained after registering at the
 > [RDW open data portal](https://opendata.rdw.nl/signup).
 
-## SDK
+# SDK
 
-### Installation
+## Installation
 
 ```bash
 yarn|npm add @motorrijtuigenbelasting/core @motorrijtuigenbelasting/mrb2023
@@ -78,7 +84,7 @@ yarn|npm add @motorrijtuigenbelasting/core @motorrijtuigenbelasting/mrb2023
 > the corresponding package. See elsewhere in this README to see a list of
 > supported revisions.
 
-### Usage
+## Usage
 
 ```js
 import {
@@ -96,10 +102,36 @@ const params = {
   province: Province.Utrecht,
 };
 
-const results = run(mrb2023, params, period);
+const results = run(mrb2023, params);
 
 console.log({ results });
 ```
+
+# Contributing
+
+Contributions are very welcome!
+
+## Roadmap
+
+- [ ] implement missing propulsiontypes
+- [ ] implement missing vehicletypes
+- [ ] implement betalennaargebruik package
+
+Also see [TODO.md](TODO.md).
+
+## Development
+
+To run the `@motorrijtuigenbelasting/cli` package from source, run:
+
+```bash
+cd packages/cli
+yarn start
+```
+
+## Devcontainer
+
+A devcontainer configuration is included in this repo to
+[get started quickly](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container).
 
 ## Credits
 

@@ -70,7 +70,11 @@ export function calculateTotal(
   };
 }
 
-export function run(model: Model, params: Params, period: Period) {
+export function run(
+  model: Model,
+  params: Params,
+  period: Period = Period.quarter
+) {
   const components = model(params);
   const { mileage } = params;
 
