@@ -1,3 +1,14 @@
+# [2.0.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.3...v2.0.0) (2023-03-11)
+
+### Features
+
+- readme for v2
+  ([83a6546](https://github.com/hongaar/motorrijtuigenbelasting/commit/83a6546aba12db1fb528cf6b76e481c25d0d3722))
+
+### BREAKING CHANGES
+
+- new api
+
 ## [1.5.3](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.2...v1.5.3) (2023-02-03)
 
 ### Bug Fixes
