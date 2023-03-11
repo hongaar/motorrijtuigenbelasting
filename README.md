@@ -1,4 +1,4 @@
-# motorrijtuigenbelasting [![npm](https://img.shields.io/npm/v/motorrijtuigenbelasting)](https://www.npmjs.com/package/motorrijtuigenbelasting)
+# motorrijtuigenbelasting [![npm](https://img.shields.io/npm/v/@motorrijtuigenbelasting/cli)](https://www.npmjs.com/package/@motorrijtuigenbelasting/cli)
 
 **Calculate Dutch car tax (motorrijtuigenbelasting) in JavaScript**
 
