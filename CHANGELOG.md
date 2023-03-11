@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.0.0...v2.0.1) (2023-03-11)
+
+### Bug Fixes
+
+- make period optional
+  ([e3f01de](https://github.com/hongaar/motorrijtuigenbelasting/commit/e3f01de9384dd9d57905ae5409e8908521a705f9))
+
 # [2.0.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v1.5.3...v2.0.0) (2023-03-11)
 
 ### Features
