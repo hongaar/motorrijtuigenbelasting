@@ -16,7 +16,7 @@ afterEach(() => {
 
 test("requires rdw-app-token", async () => {
   await expect(() =>
-    app.run('--kenteken x --rdw-app-token ""')
+    app.run('--vehicle-id x --rdw-app-token ""')
   ).rejects.toThrow("Invalid argument (missing rdw-app-token)");
   // expect(outputSpy.mock.calls[0]![0]).toStrictEqual({ kenteken: "x" });
 });

@@ -1,6 +1,8 @@
 import {
+  containsPropulsionType,
   NotImplementedError,
   Params,
+  Propulsion,
   PropulsionType,
   VehicleType,
 } from "@motorrijtuigenbelasting/core";
@@ -30,6 +32,7 @@ export type BaseData = {
   kenteken: string;
   europese_voertuigcategorie: string;
   massa_ledig_voertuig: string;
+  datum_eerste_toelating_dt: string;
 
   vervaldatum_apk?: string;
   bruto_bpm?: string;
@@ -82,7 +85,6 @@ export type BaseData = {
   code_toelichting_tellerstandoordeel?: string;
   tenaamstellen_mogelijk?: string;
   datum_tenaamstelling_dt?: string;
-  datum_eerste_toelating_dt?: string;
   datum_eerste_tenaamstelling_in_nederland_dt?: string;
   api_gekentekende_voertuigen_assen?: string;
   api_gekentekende_voertuigen_brandstof?: string;
@@ -104,6 +106,8 @@ export type PropulsionData = {
   geluidsniveau_stationair?: string;
   emissiecode_omschrijving?: string;
   milieuklasse_eg_goedkeuring_licht?: string;
+  uitstoot_deeltjes_licht?: string;
+  uitstoot_deeltjes_zwaar?: string;
   nettomaximumvermogen?: string;
   toerental_geluidsniveau?: string;
   uitlaatemissieniveau?: string;
@@ -147,7 +151,7 @@ export type RdwData = {
  * verstaan een voertuig van categorie M of N met specifieke technische
  * kenmerken waardoor het buiten de normale wegen kan worden gebruikt.
  */
-export function toVehicleType(rdwData: RdwData) {
+export function toVehicleType(rdwData: RdwData): VehicleType {
   switch (rdwData.base.europese_voertuigcategorie) {
     case "M1":
       return VehicleType.Personenauto;
@@ -166,11 +170,14 @@ export function toVehicleType(rdwData: RdwData) {
   }
 }
 
-export function toWeight(rdwData: RdwData) {
+export function toWeight(rdwData: RdwData): number {
   return Number(rdwData.base.massa_ledig_voertuig);
 }
 
-export function toPropulsionType(base: BaseData, propulsion: PropulsionData) {
+export function toPropulsionType(
+  base: BaseData,
+  propulsion: PropulsionData
+): PropulsionType {
   switch (propulsion.brandstof_omschrijving) {
     case "Diesel":
       return PropulsionType.Diesel;
@@ -197,7 +204,7 @@ export function toPropulsionType(base: BaseData, propulsion: PropulsionData) {
   }
 }
 
-export function toPropulsions(rdwData: RdwData) {
+export function toPropulsions(rdwData: RdwData): Propulsion[] {
   const { base, propulsions } = rdwData;
 
   if (propulsions.length === 0) {
@@ -207,8 +214,69 @@ export function toPropulsions(rdwData: RdwData) {
 
   return propulsions.map((propulsion) => ({
     type: toPropulsionType(base, propulsion),
-    emission: Number(propulsion.co2_uitstoot_gecombineerd),
+    co2Emission: Number(propulsion.co2_uitstoot_gecombineerd) || null,
   }));
+}
+
+/**
+ * Is op uw motorrijtuig de fijnstoftoeslag van toepassing?
+ *
+ * De fijnstoftoeslag is van toepassing wanneer:
+ * - de fijnstofuitstoot hoger is dan 0,005 g/km, of
+ * - de fijnstofuitstoot hoger is dan 0,01 g/kWh
+ * - bij het motorrijtuig vermeld staat dat het affabriek roetfilter verwijderd
+ *   is
+ * - van het motorrijtuig geen uitstootgegevens bekend zijn en het
+ *   motorrijtuig een datum eerste toelating heeft van vóór 1 september 2009
+ *
+ * Deze regels gelden voor personenauto’s en bestelauto’s die op diesel rijden.
+ *
+ * Voor bestelauto’s komt er 1 regel bij:
+ * - De bestelauto moet minimaal 12 jaar oud zijn bij het begin van het tijdvak
+ *   waarover de fijnstoftoeslag geheven gaat worden.
+ *
+ * @todo this should be moved to mrb{revision} as it could change yoy
+ */
+export function toParticulateMatterSurtax(rdwData: RdwData): boolean | null {
+  if (!containsPropulsionType(PropulsionType.Diesel, toPropulsions(rdwData))) {
+    return null;
+  }
+
+  /**
+   * @todo De bestelauto moet minimaal 12 jaar oud zijn bij het begin van het
+   * tijdvak waarover de fijnstoftoeslag geheven gaat worden.
+   */
+
+  const diesel = rdwData.propulsions.find(
+    (propulsion) =>
+      toPropulsionType(rdwData.base, propulsion) === PropulsionType.Diesel
+  ) as PropulsionData;
+
+  if (
+    Number(diesel.uitstoot_deeltjes_licht) > 0.005 ||
+    Number(diesel.uitstoot_deeltjes_zwaar) > 0.01
+  ) {
+    return true;
+  }
+
+  /**
+   * @todo bij het motorrijtuig vermeld staat dat het affabriek roetfilter
+   * verwijderd is
+   */
+
+  if (
+    typeof diesel.uitstoot_deeltjes_licht === "undefined" &&
+    typeof diesel.uitstoot_deeltjes_zwaar === "undefined" &&
+    toDateOfFirstAdmission(rdwData) < new Date("2009-09-01T00:00:00.000'")
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+export function toDateOfFirstAdmission(rdwData: RdwData): Date {
+  return new Date(rdwData.base.datum_eerste_toelating_dt);
 }
 
 export function sanitizeVehicleId(vehicleId: string) {
@@ -256,6 +324,7 @@ export function rdwDataToParams(rdwData: RdwData): Params {
     vehicleType: toVehicleType(rdwData),
     weight: toWeight(rdwData),
     propulsions: toPropulsions(rdwData),
+    particulateMatterSurtax: toParticulateMatterSurtax(rdwData),
   };
 }
 

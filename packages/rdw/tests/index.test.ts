@@ -8,6 +8,7 @@ describe("toWeight", () => {
           kenteken: "foo",
           europese_voertuigcategorie: "bar",
           massa_ledig_voertuig: "300",
+          datum_eerste_toelating_dt: "2010-01-01T00:00:00.000",
         },
         propulsions: [],
       })
@@ -23,6 +24,7 @@ describe("toPropulsion", () => {
           kenteken: "foo",
           europese_voertuigcategorie: "bar",
           massa_ledig_voertuig: "300",
+          datum_eerste_toelating_dt: "2010-01-01T00:00:00.000",
         },
         propulsions: [
           {
@@ -36,7 +38,7 @@ describe("toPropulsion", () => {
     ).toStrictEqual([
       {
         type: "Benzine",
-        emission: 5,
+        co2Emission: 5,
       },
     ]);
   });

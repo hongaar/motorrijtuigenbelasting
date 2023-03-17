@@ -1,11 +1,11 @@
 import { Period, run, Unit } from "../src/model.js";
-import { PropulsionType, VehicleType } from "../src/params.js";
+import { Params, PropulsionType, VehicleType } from "../src/params.js";
 
 test("runs a simple model", () => {
-  const params = {
+  const params: Params = {
     vehicleType: VehicleType.Personenauto,
     weight: 1000,
-    propulsions: [{ type: PropulsionType.Benzine, emission: 100 }],
+    propulsions: [{ type: PropulsionType.Benzine, co2Emission: 100 }],
   };
 
   const model = () => {
