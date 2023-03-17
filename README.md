@@ -54,7 +54,12 @@ Example with vehicle ID (kenteken) as input:
 export RDW_APP_TOKEN=foo
 yarn dlx @motorrijtuigenbelasting/cli \
   --vehicle-id S-212-PK
+  --province Utrecht
 ```
+
+Example output:
+
+![Example CLI output](cli.png)
 
 > **Note**: App token can be obtained after registering at the
 > [RDW open data portal](https://opendata.rdw.nl/signup).
