@@ -11,6 +11,7 @@ import fetch from "cross-fetch";
 const BASE_SERVICE_URL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json";
 const PROPULSIONS_SERVICE_URL =
   "https://opendata.rdw.nl/resource/8ys7-d773.json";
+const BODYTYPE_SERVICE_URL = "https://opendata.rdw.nl/resource/vezc-m2t6.json";
 
 class InvalidRdwData extends Error {
   constructor() {
@@ -113,9 +114,17 @@ export type PropulsionData = {
   uitlaatemissieniveau?: string;
 };
 
+export type BodyData = {
+  kenteken: string;
+  carrosserie_volgnummer: string;
+  carrosserietype: string;
+  type_carrosserie_europese_omschrijving: string;
+};
+
 export type RdwData = {
   base: BaseData;
   propulsions: PropulsionData[];
+  body: BodyData;
 };
 
 /**
@@ -157,17 +166,17 @@ export function toVehicleType(rdwData: RdwData): VehicleType {
       return VehicleType.Personenauto;
 
     case "N1":
-      // ??
-      return VehicleType["Bestelauto ondernemer"];
-
     case "N2":
     case "N3":
-      // ??
-      return VehicleType.Vrachtauto;
-
-    default:
-      throw new NotImplementedError();
+      /**
+       * @todo is this correct?
+       */
+      if (rdwData.body.carrosserietype === "BB") {
+        return VehicleType["Bestelauto ondernemer"];
+      }
   }
+
+  throw new NotImplementedError();
 }
 
 export function toWeight(rdwData: RdwData): number {
@@ -313,9 +322,13 @@ export async function fetchRdwData(vehicleId: string, appToken: string) {
   const propulsions = await fetchRdwUrl(PROPULSIONS_SERVICE_URL);
   validateResponse(propulsions);
 
+  const body = await fetchRdwUrl(BODYTYPE_SERVICE_URL);
+  validateResponse(body);
+
   return {
     base: base[0] as BaseData,
     propulsions: propulsions as PropulsionData[],
+    body: body[0] as BodyData,
   };
 }
 

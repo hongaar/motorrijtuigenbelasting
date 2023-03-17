@@ -4,7 +4,12 @@ import {
   NotImplementedError,
   VehicleType,
 } from "@motorrijtuigenbelasting/core";
-import { kampeerauto, personenauto } from "./vehicleTypes/index.js";
+import {
+  bestelautoOndernemer,
+  bestelautoParticulier,
+  kampeerauto,
+  personenauto,
+} from "./vehicleTypes/index.js";
 
 const model: Model = (params) => {
   const {
@@ -55,6 +60,28 @@ const model: Model = (params) => {
        * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/bijzonder_tarief/kampeerauto-camper
        */
       return kampeerauto(params);
+
+    case VehicleType["Bestelauto particulier"]:
+      /**
+       * Bestelauto
+       * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/soort_motorrijtuig/bestelauto/
+       */
+      return bestelautoParticulier(params);
+
+    case VehicleType["Bestelauto gehandicapte"]:
+      /**
+       * Bestelauto gehandicapte
+       * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/soort_motorrijtuig/bestelauto/bestelautotarief_voor_gehandicapte_personen
+       */
+      // @todo
+      break;
+
+    case VehicleType["Bestelauto ondernemer"]:
+      /**
+       * Bestelauto ondernemer
+       * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/soort_motorrijtuig/bestelauto/bestelautotarief_voor_ondernemers
+       */
+      return bestelautoOndernemer(params);
   }
 
   throw new NotImplementedError();

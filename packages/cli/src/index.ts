@@ -8,7 +8,11 @@ import {
   VehicleType,
 } from "@motorrijtuigenbelasting/core";
 import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
-import { fetchRdwData, rdwDataToParams } from "@motorrijtuigenbelasting/rdw";
+import {
+  fetchRdwData,
+  RdwData,
+  rdwDataToParams,
+} from "@motorrijtuigenbelasting/rdw";
 import { command, program } from "bandersnatch";
 import yaml from "js-yaml";
 
@@ -95,6 +99,7 @@ const cmd = command()
       "log-rdw-data": logRdwData,
     }) => {
       let params: Params;
+      let rdwData: RdwData | undefined;
 
       if (vehicleId) {
         if (!rdwAppToken) {
@@ -113,10 +118,9 @@ const cmd = command()
           );
         }
 
-        const rdwData = await fetchRdwData(vehicleId, rdwAppToken);
+        rdwData = await fetchRdwData(vehicleId, rdwAppToken);
 
         if (logRdwData) {
-          console.dir(rdwData, { depth: null });
           format = "js";
         }
 
@@ -147,7 +151,12 @@ const cmd = command()
       switch (format) {
         case "js":
           console.dir(
-            { vehicleId, params, mrb2023: mrb2023results },
+            {
+              ...(logRdwData ? { rdwData } : {}),
+              vehicleId,
+              params,
+              mrb2023: mrb2023results,
+            },
             { depth: null }
           );
           break;
