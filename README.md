@@ -44,7 +44,7 @@ yarn dlx @motorrijtuigenbelasting/cli \
   --vehicle-type Personenauto \
   --weight 1051 \
   --propulsion-type Benzine \
-  --propulsion-emission 86 \
+  --co2-emission 86 \
   --province Utrecht
 ```
 
@@ -85,7 +85,7 @@ import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
 const params = {
   vehicleType: VehicleType.Personenauto,
   weight: 1051,
-  propulsions: [{ type: PropulsionType.Benzine, emission: 86 }],
+  propulsions: [{ type: PropulsionType.Benzine, co2Emission: 86 }],
   province: Province.Utrecht,
 };
 
