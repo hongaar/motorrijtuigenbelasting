@@ -42,7 +42,7 @@ export enum PropulsionType {
 
 export type Propulsion = {
   type: PropulsionType;
-  emission: number | null;
+  co2Emission: number | null; //  g/km
 };
 
 export type Params = {
@@ -51,6 +51,10 @@ export type Params = {
   weight: number;
   province?: Province | null;
   mileage?: number;
+
+  // Special cases
+  particulateMatterSurtax?: boolean | null;
+  rentedForBusinessPurposes?: boolean | null;
 };
 
 export function containsPropulsionType(
@@ -67,12 +71,12 @@ export function containsPropulsionType(
 export function highestPropulsionEmission(
   propulsions: Propulsion[]
 ): number | null {
-  if (propulsions.some((propulsion) => propulsion.emission === null)) {
+  if (propulsions.some((propulsion) => propulsion.co2Emission === null)) {
     return null;
   }
 
   return Math.max(
-    ...propulsions.map((propulsion) => propulsion.emission as number)
+    ...propulsions.map((propulsion) => propulsion.co2Emission as number)
   );
 }
 

@@ -4,7 +4,7 @@ import {
   NotImplementedError,
   VehicleType,
 } from "@motorrijtuigenbelasting/core";
-import { personenauto } from "./vehicleTypes/index.js";
+import { kampeerauto, personenauto } from "./vehicleTypes/index.js";
 
 const model: Model = (params) => {
   const {
@@ -48,6 +48,13 @@ const model: Model = (params) => {
        * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/soort_motorrijtuig/personenauto
        */
       return personenauto(params);
+
+    case VehicleType.Kampeerauto:
+      /**
+       * Kampeerauto (camper)
+       * https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/auto_en_vervoer/belastingen_op_auto_en_motor/motorrijtuigenbelasting/bijzonder_tarief/kampeerauto-camper
+       */
+      return kampeerauto(params);
   }
 
   throw new NotImplementedError();

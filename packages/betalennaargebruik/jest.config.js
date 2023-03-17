@@ -5,4 +5,7 @@ export default {
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
   },
+  // Somehow the default from ts-jest/presets/default-esm
+  // ([".ts", ".tsx", ".mts"]) throws an error
+  extensionsToTreatAsEsm: [".ts"],
 };

@@ -8,7 +8,7 @@ import {
   VehicleType,
 } from "@motorrijtuigenbelasting/core";
 import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
-import { vehicleIdToParams } from "@motorrijtuigenbelasting/rdw";
+import { fetchRdwData, rdwDataToParams } from "@motorrijtuigenbelasting/rdw";
 import { command, program } from "bandersnatch";
 import yaml from "js-yaml";
 
@@ -31,7 +31,7 @@ const cmd = command()
     choices: Object.values(VehicleType),
   })
   .option("weight", {
-    description: "Weight",
+    description: "Weight (in kg)",
     type: "number",
   })
   .option("propulsion-type", {
@@ -39,9 +39,19 @@ const cmd = command()
     type: "string",
     choices: Object.values(PropulsionType),
   })
-  .option("propulsion-emission", {
-    description: "Propulsion emission",
+  .option("co2-emission", {
+    description: "CO₂ emission (in g/km)",
     type: "number",
+  })
+  .option("particulate-matter-surtax", {
+    description:
+      "Does the particulate matter surtax apply? Only valid if --propulsion-type=Diesel",
+    type: "boolean",
+  })
+  .option("rented-for-business-purposes", {
+    description:
+      "Is your motorhome rented out for business purposes? Only valid if --vehicle-type=Kampeerauto",
+    type: "boolean",
   })
   .option("province", {
     description: "Province",
@@ -49,7 +59,7 @@ const cmd = command()
     choices: Object.values(Province),
   })
   .option("mileage", {
-    description: "Mileage per period",
+    description: "Mileage per period (in km)",
     type: "number",
     default: 2500,
   })
@@ -63,6 +73,11 @@ const cmd = command()
     choices: ["js", "json", "yaml", "table"] as const,
     default: "js",
   })
+  .option("log-rdw-data", {
+    description:
+      "Log RDW output. Only if --vehicle-id is set. Sets format to js",
+    type: "boolean",
+  })
   .action(
     async ({
       "vehicle-id": vehicleId,
@@ -70,11 +85,14 @@ const cmd = command()
       "vehicle-type": vehicleType,
       weight,
       "propulsion-type": propulsionType,
-      "propulsion-emission": propulsionEmission,
+      "co2-emission": co2Emission,
+      "particulate-matter-surtax": particulateMatterSurtax,
+      "rented-for-business-purposes": rentedForBusinessPurposes,
       province,
       mileage,
       period,
       format,
+      "log-rdw-data": logRdwData,
     }) => {
       let params: Params;
 
@@ -85,21 +103,36 @@ const cmd = command()
 
         if (
           typeof propulsionType !== "undefined" ||
-          typeof propulsionEmission !== "undefined" ||
+          typeof co2Emission !== "undefined" ||
+          typeof particulateMatterSurtax !== "undefined" ||
           typeof vehicleType !== "undefined" ||
           typeof weight !== "undefined"
         ) {
           throw new InvalidArgument(
-            "cannot specify propulsion-type, propulsion-emission, vehicle-type or weight when kenteken is specified"
+            "cannot specify --propulsion-type, --propulsion-co2-emission, --vehicle-type, --particulate-matter-surtax or --weight when --vehicle-id is specified"
           );
         }
 
-        params = await vehicleIdToParams(vehicleId, rdwAppToken);
+        const rdwData = await fetchRdwData(vehicleId, rdwAppToken);
+
+        if (logRdwData) {
+          console.dir(rdwData, { depth: null });
+          format = "js";
+        }
+
+        params = rdwDataToParams(rdwData);
       } else {
         params = {
           vehicleType,
           weight,
-          propulsions: [{ type: propulsionType, emission: propulsionEmission }],
+          propulsions: [
+            {
+              type: propulsionType,
+              co2Emission: co2Emission || null,
+            },
+          ],
+          particulateMatterSurtax: particulateMatterSurtax ?? null,
+          rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         };
       }
 
@@ -139,7 +172,9 @@ const cmd = command()
             propulsions: params.propulsions
               .map(
                 (propulsion) =>
-                  `${propulsion.type} (emission: ${propulsion.emission})`
+                  `${propulsion.type} (CO₂ emission: ${
+                    propulsion.co2Emission ?? "unknown"
+                  } g/km)`
               )
               .join(", "),
           });

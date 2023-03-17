@@ -17,10 +17,9 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [CLI](#cli)
-  - [Installation](#installation)
   - [Usage](#usage)
 - [SDK](#sdk)
-  - [Installation](#installation-1)
+  - [Installation](#installation)
   - [Usage](#usage-1)
 - [Contributing](#contributing)
   - [Roadmap](#roadmap)
@@ -32,28 +31,16 @@
 
 # CLI
 
-## Installation
-
-```bash
-yarn|npm add @motorrijtuigenbelasting/cli
-```
-
 ## Usage
 
-Show help:
-
-```bash
-# yarn
-yarn dlx @motorrijtuigenbelasting/cli --help
-
-# npm
-npx @motorrijtuigenbelasting/cli --help
-```
+In the examples below, we use [`yarn dlx`](https://yarnpkg.com/cli/dlx) to run
+the CLI. You can also use [`npx`](https://docs.npmjs.com/cli/v9/commands/npx),
+it should work exactly the same.
 
 Example with manual input:
 
 ```bash
-yarn dlx|npx @motorrijtuigenbelasting/cli \
+yarn dlx @motorrijtuigenbelasting/cli \
   --vehicle-type Personenauto \
   --weight 1051 \
   --propulsion-type Benzine \
@@ -65,7 +52,7 @@ Example with vehicle ID (kenteken) as input:
 
 ```bash
 export RDW_APP_TOKEN=foo
-yarn dlx|npx @motorrijtuigenbelasting/cli \
+yarn dlx @motorrijtuigenbelasting/cli \
   --vehicle-id S-212-PK
 ```
 
@@ -116,8 +103,10 @@ Contributions are very welcome!
 - [ ] implement missing propulsiontypes
 - [ ] implement missing vehicletypes
 - [ ] implement betalennaargebruik package
+- [ ] emit warning when there is a known discrepancy between the model and the
+      official calculator
 
-Also see [TODO.md](TODO.md).
+See [TODO.md](TODO.md) for known problems which need fixing and general todos.
 
 ## Development
 
