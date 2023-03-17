@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.0.1...v2.1.0) (2023-03-17)
+
+### Features
+
+- kampeerauto
+  ([#22](https://github.com/hongaar/motorrijtuigenbelasting/issues/22))
+  ([2803f58](https://github.com/hongaar/motorrijtuigenbelasting/commit/2803f58ad8b0000572584f786b9dc7e73f876d0b))
+
 ## [2.0.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.0.0...v2.0.1) (2023-03-11)
 
 ### Bug Fixes
