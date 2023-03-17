@@ -772,7 +772,7 @@ __metadata:
   resolution: "@motorrijtuigenbelasting/betalennaargebruik@workspace:packages/betalennaargebruik"
   dependencies:
     "@types/jest": 29.4.0
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     jest: 29.5.0
     ts-jest: 29.0.5
     typescript: 4.9.5
@@ -789,7 +789,7 @@ __metadata:
     "@motorrijtuigenbelasting/rdw": "workspace:*"
     "@types/jest": 29.4.0
     "@types/js-yaml": ^4
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     bandersnatch: 1.11.1
     jest: 29.5.0
     js-yaml: 4.1.0
@@ -805,7 +805,7 @@ __metadata:
   resolution: "@motorrijtuigenbelasting/core@workspace:packages/core"
   dependencies:
     "@types/jest": 29.4.0
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     jest: 29.5.0
     ts-jest: 29.0.5
     typescript: 4.9.5
@@ -818,7 +818,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@types/jest": 29.4.0
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     jest: 29.5.0
     ts-jest: 29.0.5
     typescript: 4.9.5
@@ -832,7 +832,7 @@ __metadata:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb1995": "workspace:*"
     "@types/jest": 29.4.0
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     jest: 29.5.0
     ts-jest: 29.0.5
     typescript: 4.9.5
@@ -845,7 +845,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@types/jest": 29.4.0
-    "@types/node": 18.14.6
+    "@types/node": 18.15.3
     cross-fetch: 3.1.5
     jest: 29.5.0
     ts-jest: 29.0.5
@@ -1542,10 +1542,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:18.14.6":
+"@types/node@npm:*":
   version: 18.14.6
   resolution: "@types/node@npm:18.14.6"
   checksum: 2f88f482cabadc6dbddd627a1674239e68c3c9beab56eb4ae2309fb96fd17fc3a509d99b0309bafe13b58529574f49ecf3a583f2ebe2896dd32fe4be436dc96e
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:18.15.3":
+  version: 18.15.3
+  resolution: "@types/node@npm:18.15.3"
+  checksum: 31b1d92475a82c30de29aa6c0771b18a276552d191283b4423ba2d61b3f01159bf0d02576c0b7cc834b043997893800db6bb47f246083ed85aa45e79c80875d7
   languageName: node
   linkType: hard
 
