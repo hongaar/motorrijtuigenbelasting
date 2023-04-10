@@ -27,7 +27,7 @@
     "@motorrijtuigenbelasting/core": "workspace:*",
     "@motorrijtuigenbelasting/mrb2023": "workspace:*",
     "@motorrijtuigenbelasting/rdw": "workspace:*",
-    "bandersnatch": "1.11.1",
+    "bandersnatch": "1.12.1",
     "js-yaml": "4.1.0"
   },
   "devDependencies": {
