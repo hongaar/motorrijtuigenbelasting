@@ -31,7 +31,7 @@
     "lint-staged": "13.2.1",
     "moker": "0.11.3",
     "prettier": "2.8.8",
-    "semantic-release": "21.0.1",
+    "semantic-release": "21.0.2",
     "semantic-release-yarn": "1.0.0"
   },
   "packageManager": "yarn@3.4.1",
