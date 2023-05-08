@@ -29,7 +29,7 @@
     "husky": "8.0.3",
     "leasot": "13.3.0",
     "lint-staged": "13.2.1",
-    "moker": "0.11.4",
+    "moker": "0.12.0",
     "prettier": "2.8.8",
     "semantic-release": "21.0.2",
     "semantic-release-yarn": "1.0.0"
