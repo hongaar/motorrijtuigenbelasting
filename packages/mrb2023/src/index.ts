@@ -1,8 +1,8 @@
 import {
   InvalidArgument,
-  Model,
   NotImplementedError,
   VehicleType,
+  type Model,
 } from "@motorrijtuigenbelasting/core";
 import {
   bestelautoOndernemer,

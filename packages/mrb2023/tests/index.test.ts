@@ -1,10 +1,10 @@
 import {
-  Params,
   Period,
   PropulsionType,
   Province,
-  run,
   VehicleType,
+  run,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 import model from "../src/index.js";
 

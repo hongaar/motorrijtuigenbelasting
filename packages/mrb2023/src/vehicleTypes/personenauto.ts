@@ -1,15 +1,15 @@
 import {
-  calculateTotal,
-  containsPropulsionType,
-  highestPropulsionEmission,
-  ModelOutput,
-  Params,
   Period,
   PropulsionType,
   Unit,
+  VehicleType,
+  calculateTotal,
+  containsPropulsionType,
+  highestPropulsionEmission,
   validatePropulsions,
   validateProvince,
-  VehicleType,
+  type ModelOutput,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 import {
   rateMap as rateMap1995,

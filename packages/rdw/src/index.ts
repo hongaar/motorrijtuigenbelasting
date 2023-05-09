@@ -1,10 +1,10 @@
 import {
-  containsPropulsionType,
   NotImplementedError,
-  Params,
-  Propulsion,
   PropulsionType,
   VehicleType,
+  containsPropulsionType,
+  type Params,
+  type Propulsion,
 } from "@motorrijtuigenbelasting/core";
 import fetch from "cross-fetch";
 

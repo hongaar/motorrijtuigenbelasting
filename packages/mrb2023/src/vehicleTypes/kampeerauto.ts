@@ -1,9 +1,9 @@
 import {
-  calculateTotal,
-  ModelOutput,
-  Params,
   Period,
   Unit,
+  calculateTotal,
+  type ModelOutput,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 import { personenauto } from "./personenauto.js";
 
