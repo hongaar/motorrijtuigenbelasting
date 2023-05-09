@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.1.1...v3.0.0) (2023-05-09)
+
+### Features
+
+- update node.js versions
+  ([#52](https://github.com/hongaar/motorrijtuigenbelasting/issues/52))
+  ([dee632f](https://github.com/hongaar/motorrijtuigenbelasting/commit/dee632fef7ecc4524354d248f41cd7d14f1d882d))
+
+### BREAKING CHANGES
+
+- This updates the supported node.js versions
+
 ## [2.1.1](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.1.0...v2.1.1) (2023-05-09)
 
 ### Bug Fixes
