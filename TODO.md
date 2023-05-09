@@ -11,4 +11,4 @@
 | [packages/rdw/src/index.ts](packages/rdw/src/index.ts#L238)                       |  238   | this should be moved to mrb{revision} as it could change yoy          |
 | [packages/rdw/src/index.ts](packages/rdw/src/index.ts#L246)                       |  246   | De bestelauto moet minimaal 12 jaar oud zijn bij het begin van het    |
 | [packages/rdw/src/index.ts](packages/rdw/src/index.ts#L263)                       |  263   | bij het motorrijtuig vermeld staat dat het affabriek roetfilter       |
-| [packages/rdw/types/index.d.ts](packages/rdw/types/index.d.ts#L148)               |  148   | this should be moved to mrb{revision} as it could change yoy          |
+| [packages/rdw/types/index.d.ts](packages/rdw/types/index.d.ts#L141)               |  141   | this should be moved to mrb{revision} as it could change yoy          |

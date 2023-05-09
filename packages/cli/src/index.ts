@@ -1,11 +1,11 @@
 import {
   InvalidArgument,
-  Params,
   Period,
   PropulsionType,
   Province,
-  run,
   VehicleType,
+  run,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
 import { fetchRdwData, rdwDataToParams } from "@motorrijtuigenbelasting/rdw";

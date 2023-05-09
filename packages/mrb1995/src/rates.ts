@@ -1,7 +1,7 @@
 import {
-  Params,
   PropulsionType,
   VehicleType,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 
 export type Rate = {
