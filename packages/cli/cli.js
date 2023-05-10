@@ -3,6 +3,9 @@
 import { app } from "./dist/index.js";
 
 app.run().catch((error) => {
-  // console.error(String(error))
-  console.error(error);
+  if ("DEBUG" in process.env) {
+    console.error(error);
+  } else {
+    console.error(String(error));
+  }
 });

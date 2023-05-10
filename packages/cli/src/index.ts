@@ -10,8 +10,8 @@ import {
 import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
 import {
   fetchRdwData,
-  RdwData,
   rdwDataToParams,
+  type RdwData,
 } from "@motorrijtuigenbelasting/rdw";
 import { command, program } from "bandersnatch";
 import yaml from "js-yaml";
@@ -109,7 +109,6 @@ const cmd = command()
         if (
           typeof propulsionType !== "undefined" ||
           typeof co2Emission !== "undefined" ||
-          typeof particulateMatterSurtax !== "undefined" ||
           typeof vehicleType !== "undefined" ||
           typeof weight !== "undefined"
         ) {
@@ -135,13 +134,13 @@ const cmd = command()
               co2Emission: co2Emission || null,
             },
           ],
-          particulateMatterSurtax: particulateMatterSurtax ?? null,
-          rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         };
       }
 
       params = {
         ...params,
+        particulateMatterSurtax: particulateMatterSurtax ?? null,
+        rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         province: province || null,
         mileage,
       };

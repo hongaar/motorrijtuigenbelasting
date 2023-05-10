@@ -1,14 +1,13 @@
 import {
-  calculateTotal,
-  containsPropulsionType,
-  ModelOutput,
-  Params,
   Period,
   PropulsionType,
   Unit,
-  validatePropulsions,
-  validateProvince,
   VehicleType,
+  calculateTotal,
+  containsPropulsionType,
+  validatePropulsions,
+  type ModelOutput,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
 import { taxAmountByWeight } from "@motorrijtuigenbelasting/mrb1995";
 import { rateMap } from "../rates.js";
@@ -26,9 +25,8 @@ import { rateMap } from "../rates.js";
  *   kilometers voor uw onderneming gebruikt.
  */
 export function bestelautoOndernemer(params: Params): ModelOutput {
-  const { province, propulsions, weight } = params;
+  const { propulsions, weight } = params;
 
-  validateProvince(province);
   validatePropulsions(propulsions);
 
   const output: ModelOutput = [];
@@ -43,7 +41,7 @@ export function bestelautoOndernemer(params: Params): ModelOutput {
     description: "Motorrijtuigenbelasting voor een bestelauto ondernemer",
     reference: {
       title: "Artikel 24b, Wet op de motorrijtuigenbelasting 1994",
-      url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24b&z=2023-01-01&g=2023-01-01",
+      url: "https://wetten.overhei  d.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24b&z=2023-01-01&g=2023-01-01",
     },
     subtotal: base,
     unit: Unit.euro_per_quarter,
@@ -56,7 +54,7 @@ export function bestelautoOndernemer(params: Params): ModelOutput {
     output.push({
       name: "Fijnstoftoeslag",
       description:
-        "Fijnstoftoeslag voor een bestelauto ondernemer rijdend op diesel, zijnde 15%",
+        "Fijnstoftoeslag voor een bestelauto rijdend op diesel, zijnde 15%",
       reference: {
         title: "Artikel 24, tweede lid, Wet op de motorrijtuigenbelasting 1994",
         url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24&lid=2&z=2023-01-01&g=2023-01-01",

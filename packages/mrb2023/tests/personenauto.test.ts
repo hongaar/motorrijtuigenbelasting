@@ -1,11 +1,39 @@
 import {
+  Period,
   PropulsionType,
   Province,
   VehicleType,
+  run,
+  type Params,
 } from "@motorrijtuigenbelasting/core";
-import { total } from "./util.js";
+import model from "../src/index.js";
 
 // Baseline is https://www.belastingdienst.nl/wps/wcm/connect/nl/auto-en-vervoer/content/hulpmiddel-motorrijtuigenbelasting-berekenen
+
+const total =
+  (vehicleType: VehicleType) =>
+  (propulsionType: PropulsionType) =>
+  (
+    weight: number,
+    province: Province | null,
+    co2Emission: number,
+    rest: Omit<
+      Params,
+      "vehicleType" | "weight" | "province" | "propulsions"
+    > = {}
+  ) => {
+    return run(
+      model,
+      {
+        vehicleType,
+        weight,
+        propulsions: [{ type: propulsionType, co2Emission }],
+        ...rest,
+        province,
+      },
+      Period.quarter
+    ).total;
+  };
 
 const totalPersonenauto = total(VehicleType.Personenauto);
 const totalBenzine = totalPersonenauto(PropulsionType.Benzine);
