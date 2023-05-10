@@ -11,6 +11,12 @@ describe("toWeight", () => {
           datum_eerste_toelating_dt: "2010-01-01T00:00:00.000",
         },
         propulsions: [],
+        body: {
+          kenteken: "foo",
+          carrosserie_volgnummer: "1",
+          carrosserietype: "foo",
+          type_carrosserie_europese_omschrijving: "foo",
+        },
       })
     ).toStrictEqual(300);
   });
@@ -34,6 +40,12 @@ describe("toPropulsion", () => {
             co2_uitstoot_gecombineerd: "5",
           },
         ],
+        body: {
+          kenteken: "foo",
+          carrosserie_volgnummer: "1",
+          carrosserietype: "foo",
+          type_carrosserie_europese_omschrijving: "foo",
+        },
       })
     ).toStrictEqual([
       {

@@ -8,7 +8,11 @@ import {
   type Params,
 } from "@motorrijtuigenbelasting/core";
 import mrb2023 from "@motorrijtuigenbelasting/mrb2023";
-import { fetchRdwData, rdwDataToParams } from "@motorrijtuigenbelasting/rdw";
+import {
+  fetchRdwData,
+  rdwDataToParams,
+  type RdwData,
+} from "@motorrijtuigenbelasting/rdw";
 import { command, program } from "bandersnatch";
 import yaml from "js-yaml";
 
@@ -95,6 +99,7 @@ const cmd = command()
       "log-rdw-data": logRdwData,
     }) => {
       let params: Params;
+      let rdwData: RdwData | undefined;
 
       if (vehicleId) {
         if (!rdwAppToken) {
@@ -104,7 +109,6 @@ const cmd = command()
         if (
           typeof propulsionType !== "undefined" ||
           typeof co2Emission !== "undefined" ||
-          typeof particulateMatterSurtax !== "undefined" ||
           typeof vehicleType !== "undefined" ||
           typeof weight !== "undefined"
         ) {
@@ -113,10 +117,9 @@ const cmd = command()
           );
         }
 
-        const rdwData = await fetchRdwData(vehicleId, rdwAppToken);
+        rdwData = await fetchRdwData(vehicleId, rdwAppToken);
 
         if (logRdwData) {
-          console.dir(rdwData, { depth: null });
           format = "js";
         }
 
@@ -131,13 +134,13 @@ const cmd = command()
               co2Emission: co2Emission || null,
             },
           ],
-          particulateMatterSurtax: particulateMatterSurtax ?? null,
-          rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         };
       }
 
       params = {
         ...params,
+        particulateMatterSurtax: particulateMatterSurtax ?? null,
+        rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         province: province || null,
         mileage,
       };
@@ -147,7 +150,12 @@ const cmd = command()
       switch (format) {
         case "js":
           console.dir(
-            { vehicleId, params, mrb2023: mrb2023results },
+            {
+              ...(logRdwData ? { rdwData } : {}),
+              vehicleId,
+              params,
+              mrb2023: mrb2023results,
+            },
             { depth: null }
           );
           break;

@@ -125,4 +125,46 @@ export const rateMap = {
       ],
     },
   },
+  [VehicleType["Bestelauto ondernemer"]]: {
+    /**
+     * Wet op de motorrijtuigenbelasting 1994
+     * Artikel 24b
+     * Geldig op 1-1-2023
+     * https://wetten.overheid.nl/BWBR0006324/2023-01-01#HoofdstukIV
+     */
+    rates: [
+      {
+        threshold: 0,
+        fixedAmount: 45.42,
+      },
+      {
+        threshold: 600,
+        fixedAmount: 55.53,
+        variable: {
+          amount: 7.12,
+        },
+      },
+      {
+        threshold: 1100,
+        fixedAmount: 91.24,
+        variable: {
+          amount: 7.65,
+        },
+      },
+      {
+        threshold: 2100,
+        fixedAmount: 168.17,
+        variable: {
+          amount: 8.23,
+        },
+      },
+      {
+        threshold: 2800,
+        fixedAmount: 222.62,
+        variable: {
+          amount: 1.87,
+        },
+      },
+    ],
+  },
 } as RateMap;

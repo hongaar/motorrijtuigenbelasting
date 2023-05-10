@@ -22,7 +22,7 @@
   - [Installation](#installation)
   - [Usage](#usage-1)
 - [Contributing](#contributing)
-  - [Roadmap](#roadmap)
+  - [Implementation status](#implementation-status)
   - [Development](#development)
   - [Devcontainer](#devcontainer)
   - [Credits](#credits)
@@ -103,12 +103,44 @@ console.log({ results });
 
 Contributions are very welcome!
 
-## Roadmap
+## Implementation status
 
-- [ ] implement missing propulsiontypes
-- [ ] implement missing vehicletypes
-- [ ] implement betalennaargebruik package
-- [ ] emit warning when there is a known discrepancy between the model and the
+- [x] CLI
+- [ ] MRB2023
+  - [x] Personenauto
+    - [x] Propulsion types
+    - [x] Provinces
+    - [x] Low emission
+    - [x] No emission
+  - [x] Bestelauto particulier
+    - [x] Propulsion types
+    - [x] Particulate matter surtax
+    - [x] No emission
+  - [ ] Bestelauto gehandicapte
+  - [ ] Bestelauto ondernemer
+    - [x] Propulsion types
+    - [x] Particulate matter surtax
+    - [x] No emission
+    - [ ] Tests
+  - [ ] Motor
+  - [ ] Aanhangwagen/oplegger
+  - [x] Kampeerauto
+    - [x] Propulsion types
+    - [x] Rented for business purposes
+    - [x] Particulate matter surtax
+    - [x] No emission
+  - [ ] Caravan, vouwwagen of woonwagen
+  - [ ] Autobus
+  - [ ] Rijdende winkel
+  - [ ] Handelaarskenteken
+  - [ ] Vrachtauto
+- [ ] Convert RDW data
+  - [ ] Vehicle type (incomplete)
+  - [x] Weight
+  - [x] Propulsion types
+  - [ ] Particulate matter surtax (incomplete)
+- [ ] Betalennaargebruik package
+- [ ] Emit warning when there is a known discrepancy between the model and the
       official calculator
 
 See [TODO.md](TODO.md) for known problems which need fixing and general todos.
