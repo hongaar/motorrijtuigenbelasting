@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v3.0.0...v3.1.0) (2023-05-10)
+
+### Features
+
+- bestelauto
+  ([#24](https://github.com/hongaar/motorrijtuigenbelasting/issues/24))
+  ([ace34ab](https://github.com/hongaar/motorrijtuigenbelasting/commit/ace34ab0f66ccb473a35529a0dcb2ab5618418df))
+
 # [3.0.0](https://github.com/hongaar/motorrijtuigenbelasting/compare/v2.1.1...v3.0.0) (2023-05-09)
 
 ### Features
