@@ -135,7 +135,6 @@ Contributions are very welcome!
     - [x] Propulsion types
     - [x] Particulate matter surtax
     - [x] No emission
-    - [ ] Tests
   - [ ] Motor
   - [ ] Aanhangwagen/oplegger
   - [x] Kampeerauto

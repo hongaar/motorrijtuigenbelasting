@@ -29,6 +29,26 @@ export function bestelautoOndernemer(params: Params): ModelOutput {
 
   validatePropulsions(propulsions);
 
+  if (
+    containsPropulsionType(
+      [PropulsionType.Elektrisch, PropulsionType.Waterstof],
+      propulsions
+    )
+  ) {
+    return [
+      {
+        name: "Motorrijtuigenbelasting",
+        description:
+          "Voor een auto die volledig en uitsluitend op elektriciteit of waterstof rijdt, betaalt u geen motorrijtuigenbelasting.",
+        reference: {
+          title: "Artikel 31 Wet op de motorrijtuigenbelasting 1994",
+          url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=9&artikel=31&z=2023-01-01&g=2023-01-01",
+        },
+        subtotal: 0,
+      },
+    ];
+  }
+
   const output: ModelOutput = [];
   const { rates } = rateMap[VehicleType["Bestelauto ondernemer"]];
 
@@ -41,7 +61,7 @@ export function bestelautoOndernemer(params: Params): ModelOutput {
     description: "Motorrijtuigenbelasting voor een bestelauto ondernemer",
     reference: {
       title: "Artikel 24b, Wet op de motorrijtuigenbelasting 1994",
-      url: "https://wetten.overhei  d.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24b&z=2023-01-01&g=2023-01-01",
+      url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24b&z=2023-01-01&g=2023-01-01",
     },
     subtotal: base,
     unit: Unit.euro_per_quarter,
