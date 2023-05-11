@@ -7,7 +7,7 @@
 > **Note**: **in development**
 >
 > This module is in development. The implemented rules are tested and verified,
-> but quite some rules are not implemented yet. [Contributions](#development)
+> but quite some rules are not implemented yet. [Contributions](#contributing)
 > are very welcome!
 
 ---
