@@ -99,6 +99,19 @@ const results = run(mrb2023, params);
 console.log({ results });
 ```
 
+To obtain params from the RDW from a vehicle ID (kenteken), use the
+`@motorrijtuigenbelasting/rdw` package:
+
+```js
+import { fetchRdwData, getParamsFromRdw } from "@motorrijtuigenbelasting/rdw";
+
+const vehicleId = "S-212-PK";
+const rdwAppToken = "foo";
+
+const rdwData = await fetchRdwData(vehicleId, rdwAppToken);
+const params = rdwDataToParams(rdwData);
+```
+
 # Contributing
 
 Contributions are very welcome!
