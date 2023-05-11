@@ -45,6 +45,13 @@ export type Propulsion = {
   co2Emission: number | null; //  g/km
 };
 
+export enum BngVariant {
+  "V1a" = "V1a",
+  "V1b" = "V1b",
+  "V1a_alt1" = "V1a_alt1",
+  "V1a_alt2" = "V1a_alt2",
+}
+
 export type Params = {
   vehicleType: VehicleType;
   propulsions: Propulsion[];
@@ -55,6 +62,9 @@ export type Params = {
   // Special cases
   particulateMatterSurtax?: boolean | null;
   rentedForBusinessPurposes?: boolean | null;
+
+  // Only for BNG
+  bngVariant?: BngVariant;
 };
 
 export function containsPropulsionType(

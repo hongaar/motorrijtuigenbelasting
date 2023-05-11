@@ -23,7 +23,7 @@
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
   },
   "dependencies": {
-    "@motorrijtuigenbelasting/betalennaargebruik": "workspace:*",
+    "@motorrijtuigenbelasting/bng2030": "workspace:*",
     "@motorrijtuigenbelasting/core": "workspace:*",
     "@motorrijtuigenbelasting/mrb2023": "workspace:*",
     "@motorrijtuigenbelasting/rdw": "workspace:*",

@@ -7,9 +7,14 @@ export class InvalidArgument extends Error {
 }
 
 export class NotImplementedError extends Error {
-  constructor() {
+  constructor(message?: string) {
     super();
     this.message = "This combination of parameters is not supported yet";
+
+    if (message) {
+      this.message += ` (${message})`;
+    }
+
     this.name = "NotImplementedError";
   }
 }

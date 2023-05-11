@@ -2,7 +2,7 @@
 
 | Filename                                                                                        | line # | TODO                                                                  |
 | :---------------------------------------------------------------------------------------------- | :----: | :-------------------------------------------------------------------- |
-| [packages/mrb2023/src/index.ts](packages/mrb2023/src/index.ts#L76)                              |   76   |                                                                       |
+| [packages/mrb2023/src/index.ts](packages/mrb2023/src/index.ts#L77)                              |   77   |                                                                       |
 | [packages/mrb2023/tests/kampeerauto.test.ts](packages/mrb2023/tests/kampeerauto.test.ts#L49)    |   49   | we receive 52 while the baseline gives 65. not sure what is wrong     |
 | [packages/mrb2023/tests/kampeerauto.test.ts](packages/mrb2023/tests/kampeerauto.test.ts#L81)    |   81   | this scenario is not covered in baseline calculator                   |
 | [packages/mrb2023/tests/kampeerauto.test.ts](packages/mrb2023/tests/kampeerauto.test.ts#L88)    |   88   | this scenario is not covered in baseline calculator                   |

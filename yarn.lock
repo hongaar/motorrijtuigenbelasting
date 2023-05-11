@@ -768,11 +768,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@motorrijtuigenbelasting/betalennaargebruik@workspace:*, @motorrijtuigenbelasting/betalennaargebruik@workspace:packages/betalennaargebruik":
+"@motorrijtuigenbelasting/bng2030@workspace:*, @motorrijtuigenbelasting/bng2030@workspace:packages/bng2030":
   version: 0.0.0-use.local
-  resolution: "@motorrijtuigenbelasting/betalennaargebruik@workspace:packages/betalennaargebruik"
+  resolution: "@motorrijtuigenbelasting/bng2030@workspace:packages/bng2030"
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
+    "@motorrijtuigenbelasting/mrb2023": "workspace:*"
     "@types/jest": 29.5.1
     "@types/node": 20.1.1
     jest: 29.5.0
@@ -785,7 +786,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@motorrijtuigenbelasting/cli@workspace:packages/cli"
   dependencies:
-    "@motorrijtuigenbelasting/betalennaargebruik": "workspace:*"
+    "@motorrijtuigenbelasting/bng2030": "workspace:*"
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb2023": "workspace:*"
     "@motorrijtuigenbelasting/rdw": "workspace:*"
