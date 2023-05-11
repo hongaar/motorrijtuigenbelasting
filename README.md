@@ -4,10 +4,11 @@
 
 ---
 
-> **Warning**: **in development**
+> **Note**: **in development**
 >
-> This module is in development and not ready for use. The implemented rules are
-> tested and verified, but quite some rules are not implemented yet.
+> This module is in development. The implemented rules are tested and verified,
+> but quite some rules are not implemented yet. [Contributions](#development)
+> are very welcome!
 
 ---
 
