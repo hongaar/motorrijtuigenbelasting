@@ -21,7 +21,7 @@ import {
 } from "./rules/index.js";
 
 const model: Model = (params) => {
-  const { propulsions, weight, mileage, vehicleType, bngVariant } = params;
+  const { propulsions, mileage, vehicleType, bngVariant } = params;
   const output: ModelOutput = [];
 
   validateBngVariant(bngVariant);
