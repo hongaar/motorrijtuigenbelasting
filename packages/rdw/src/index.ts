@@ -98,7 +98,9 @@ export type PropulsionData = {
   kenteken: string;
   brandstof_volgnummer: string;
   brandstof_omschrijving: string;
-  co2_uitstoot_gecombineerd: string;
+  co2_uitstoot_gecombineerd?: string;
+  co2_uitstoot_gewogen?: string;
+  emis_co2_gewogen_gecombineerd_wltp?: string;
 
   brandstofverbruik_buiten?: string;
   brandstofverbruik_gecombineerd?: string;
@@ -176,7 +178,9 @@ export function toVehicleType(rdwData: RdwData): VehicleType {
       }
   }
 
-  throw new NotImplementedError();
+  throw new NotImplementedError(
+    `unsupported europese_voertuigcategorie: ${rdwData.base.europese_voertuigcategorie}`
+  );
 }
 
 export function toWeight(rdwData: RdwData): number {
@@ -192,7 +196,7 @@ export function toPropulsionType(
       return PropulsionType.Diesel;
     case "Benzine":
       return PropulsionType.Benzine;
-    case "Elektrisch":
+    case "Elektriciteit":
       return PropulsionType.Elektrisch;
     case "Waterstof":
       return PropulsionType.Waterstof;
@@ -209,7 +213,27 @@ export function toPropulsionType(
         ];
       }
     default:
-      throw new NotImplementedError();
+      throw new NotImplementedError(
+        `unsupported brandstof_omschrijving: ${propulsion.brandstof_omschrijving}`
+      );
+  }
+}
+
+export function toPropulsionCo2Emission(
+  _base: BaseData,
+  propulsion: PropulsionData
+): number | null {
+  switch (propulsion.brandstof_omschrijving) {
+    case "Elektriciteit":
+    case "Waterstof":
+      return 0;
+
+    default:
+      return (
+        Number(propulsion.emis_co2_gewogen_gecombineerd_wltp) ||
+        Number(propulsion.co2_uitstoot_gecombineerd) ||
+        null
+      );
   }
 }
 
@@ -223,7 +247,7 @@ export function toPropulsions(rdwData: RdwData): Propulsion[] {
 
   return propulsions.map((propulsion) => ({
     type: toPropulsionType(base, propulsion),
-    co2Emission: Number(propulsion.co2_uitstoot_gecombineerd) || null,
+    co2Emission: toPropulsionCo2Emission(base, propulsion),
   }));
 }
 

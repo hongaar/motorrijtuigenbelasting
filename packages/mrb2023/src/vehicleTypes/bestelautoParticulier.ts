@@ -1,16 +1,5 @@
-import {
-  Period,
-  PropulsionType,
-  Unit,
-  VehicleType,
-  calculateTotal,
-  containsPropulsionType,
-  validatePropulsions,
-  type ModelOutput,
-  type Params,
-} from "@motorrijtuigenbelasting/core";
-import { taxAmountByWeight } from "@motorrijtuigenbelasting/mrb1995";
-import { rateMap } from "../rates.js";
+import { type ModelOutput, type Params } from "@motorrijtuigenbelasting/core";
+import { artikel_24_1, artikel_24_2, artikel_31 } from "../rules/index.js";
 
 /**
  * Een personenauto moet voor de motorrijtuigenbelasting voldoen aan de volgende
@@ -28,82 +17,15 @@ import { rateMap } from "../rates.js";
  *   is ingericht voor personenvervoer.
  */
 export function bestelautoParticulier(params: Params): ModelOutput {
-  const { propulsions, weight } = params;
-
-  validatePropulsions(propulsions);
-
-  if (
-    containsPropulsionType(
-      [PropulsionType.Elektrisch, PropulsionType.Waterstof],
-      propulsions
-    )
-  ) {
-    return [
-      {
-        name: "Motorrijtuigenbelasting",
-        description:
-          "Voor een auto die volledig en uitsluitend op elektriciteit of waterstof rijdt, betaalt u geen motorrijtuigenbelasting.",
-        reference: {
-          title: "Artikel 31 Wet op de motorrijtuigenbelasting 1994",
-          url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=9&artikel=31&z=2023-01-01&g=2023-01-01",
-        },
-        subtotal: 0,
-      },
-    ];
-  }
-
   const output: ModelOutput = [];
-  const { rates, surtaxes } = rateMap[VehicleType["Personenauto"]];
 
-  const base = taxAmountByWeight({
-    weight,
-    rates,
-  });
-  output.push({
-    name: "Motorrijtuigenbelasting",
-    description: "Motorrijtuigenbelasting voor een bestelauto particulier",
-    reference: {
-      title: "Artikel 24b, Wet op de motorrijtuigenbelasting 1994",
-      url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24&z=2023-01-01&g=2023-01-01",
-    },
-    subtotal: base,
-    unit: Unit.euro_per_quarter,
-  });
-
-  if (containsPropulsionType([PropulsionType.Diesel], propulsions)) {
-    const surtax = taxAmountByWeight({
-      weight,
-      rates: surtaxes?.[PropulsionType.Diesel] || [],
-    });
-    output.push({
-      name: "Brandstoftoeslag",
-      description: "Brandstoftoeslag voor een personenauto rijdend op diesel",
-      reference: {
-        title: "Artikel 23, tweede lid, Wet op de motorrijtuigenbelasting 1994",
-        url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=2&artikel=23&lid=2&z=2023-01-01&g=2023-01-01",
-      },
-      subtotal: surtax,
-      unit: Unit.euro_per_quarter,
-    });
+  if (artikel_31(output, params)) {
+    return output;
   }
 
-  if (
-    containsPropulsionType(PropulsionType.Diesel, propulsions) &&
-    params.particulateMatterSurtax
-  ) {
-    output.push({
-      name: "Fijnstoftoeslag",
-      description:
-        "Fijnstoftoeslag voor een bestelauto rijdend op diesel, zijnde 15%",
-      reference: {
-        title: "Artikel 24, tweede lid, Wet op de motorrijtuigenbelasting 1994",
-        url: "https://wetten.overheid.nl/jci1.3:c:BWBR0006324&hoofdstuk=IV&afdeling=3&artikel=24&lid=2&z=2023-01-01&g=2023-01-01",
-      },
-      subtotal:
-        calculateTotal(output, { period: Period.quarter }).unrounded! * 0.15,
-      unit: Unit.euro_per_quarter,
-    });
-  }
+  artikel_24_1(output, params);
+
+  artikel_24_2(output, params);
 
   return output;
 }

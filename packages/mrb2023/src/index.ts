@@ -10,6 +10,7 @@ import {
   kampeerauto,
   personenauto,
 } from "./vehicleTypes/index.js";
+export * from "./rules/index.js";
 
 const model: Model = (params) => {
   const {

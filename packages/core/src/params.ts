@@ -45,6 +45,17 @@ export type Propulsion = {
   co2Emission: number | null; //  g/km
 };
 
+export enum BngVariant {
+  "V1a" = "V1a",
+  "V1b" = "V1b",
+  "V1a_alt1" = "V1a_alt1",
+  "V1a_alt2" = "V1a_alt2",
+  "V2" = "V2",
+  "V2_alt1" = "V2_alt1",
+  "V2_alt2" = "V2_alt2",
+  "V3" = "V3",
+}
+
 export type Params = {
   vehicleType: VehicleType;
   propulsions: Propulsion[];
@@ -55,6 +66,9 @@ export type Params = {
   // Special cases
   particulateMatterSurtax?: boolean | null;
   rentedForBusinessPurposes?: boolean | null;
+
+  // Only for BNG
+  bngVariant?: BngVariant;
 };
 
 export function containsPropulsionType(
@@ -66,6 +80,17 @@ export function containsPropulsionType(
   }
 
   return propulsions.some((propulsion) => propulsion.type === type);
+}
+
+export function containsOnlyPropulsionType(
+  type: PropulsionType | PropulsionType[],
+  propulsions: Propulsion[]
+): boolean {
+  if (Array.isArray(type)) {
+    return type.some((t) => containsOnlyPropulsionType(t, propulsions));
+  }
+
+  return propulsions.every((propulsion) => propulsion.type === type);
 }
 
 export function highestPropulsionEmission(
@@ -98,5 +123,21 @@ export function validatePropulsions(
     (propulsions[0] && !propulsions[0].type)
   ) {
     throw new InvalidArgument("propulsions is missing or empty");
+  }
+}
+
+export function validateMileage(
+  mileage?: number | null
+): asserts mileage is number {
+  if (typeof mileage === "undefined" || mileage === null) {
+    throw new InvalidArgument("mileage is missing or empty");
+  }
+}
+
+export function validateBngVariant(
+  bngVariant?: BngVariant | null
+): asserts bngVariant is BngVariant {
+  if (typeof bngVariant === "undefined") {
+    throw new InvalidArgument("bngVariant is missing");
   }
 }

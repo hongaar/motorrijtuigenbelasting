@@ -1,5 +1,5 @@
 {
-  "name": "@motorrijtuigenbelasting/betalennaargebruik",
+  "name": "@motorrijtuigenbelasting/bng2030",
   "version": "3.1.0",
   "repository": "github:hongaar/motorrijtuigenbelasting",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch"
   },
   "dependencies": {
-    "@motorrijtuigenbelasting/core": "workspace:*"
+    "@motorrijtuigenbelasting/core": "workspace:*",
+    "@motorrijtuigenbelasting/mrb2023": "workspace:*"
   },
   "devDependencies": {
     "@types/jest": "29.5.1",
