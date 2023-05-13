@@ -3,7 +3,7 @@ import {
   PropulsionType,
   Unit,
   calculateTotal,
-  containsPropulsionType,
+  containsOnlyPropulsionType,
   highestPropulsionEmission,
   validatePropulsions,
   type ModelOutput,
@@ -20,7 +20,7 @@ export function artikel_23b_1_a(output: ModelOutput, params: Params) {
   validatePropulsions(propulsions);
 
   if (
-    containsPropulsionType(
+    containsOnlyPropulsionType(
       [PropulsionType.Elektrisch, PropulsionType.Waterstof],
       propulsions
     )

@@ -1,4 +1,6 @@
+import bng2030 from "@motorrijtuigenbelasting/bng2030";
 import {
+  BngVariant,
   InvalidArgument,
   Period,
   PropulsionType,
@@ -65,12 +67,16 @@ const cmd = command()
   .option("mileage", {
     description: "Mileage per period (in km)",
     type: "number",
-    default: 2500,
+    default: 10000,
   })
   .option("period", {
     description: "Show results per unit of time",
     choices: Object.values(Period),
     default: Period.quarter,
+  })
+  .option("bng-variant", {
+    description: "Show BNG (betalen naar gebruik) instead of MRB",
+    choices: Object.values(BngVariant),
   })
   .option("format", {
     description: "Output format",
@@ -95,6 +101,7 @@ const cmd = command()
       province,
       mileage,
       period,
+      "bng-variant": bngVariant,
       format,
       "log-rdw-data": logRdwData,
     }) => {
@@ -143,9 +150,12 @@ const cmd = command()
         rentedForBusinessPurposes: rentedForBusinessPurposes ?? null,
         province: province || null,
         mileage,
+        bngVariant,
       };
 
-      const mrb2023results = run(mrb2023, params, period);
+      const results = bngVariant
+        ? run(bng2030, params, period)
+        : run(mrb2023, params, period);
 
       switch (format) {
         case "js":
@@ -154,7 +164,7 @@ const cmd = command()
               ...(logRdwData ? { rdwData } : {}),
               vehicleId,
               params,
-              mrb2023: mrb2023results,
+              results,
             },
             { depth: null }
           );
@@ -162,7 +172,11 @@ const cmd = command()
         case "json":
           console.log(
             JSON.stringify(
-              { vehicleId, params, mrb2023: mrb2023results },
+              {
+                vehicleId,
+                params,
+                results,
+              },
               null,
               2
             )
@@ -170,7 +184,11 @@ const cmd = command()
           break;
         case "yaml":
           console.log(
-            yaml.dump({ vehicleId, params, mrb2023: mrb2023results })
+            yaml.dump({
+              vehicleId,
+              params,
+              results,
+            })
           );
           break;
         case "table":
@@ -187,15 +205,11 @@ const cmd = command()
               .join(", "),
           });
           console.log("Components:");
-          console.table(mrb2023results.components, [
-            "name",
-            "subtotal",
-            "unit",
-          ]);
+          console.table(results.components, ["name", "subtotal", "unit"]);
           console.log(`Totals in euros per ${period}:`);
           console.table({
-            total: mrb2023results.total,
-            unrounded: mrb2023results.unrounded,
+            total: results.total,
+            unrounded: results.unrounded,
           });
           break;
       }

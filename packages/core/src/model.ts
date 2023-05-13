@@ -35,7 +35,12 @@ function normalizeSubtotal(
         throw new InvalidArgument("mileage is missing");
       }
 
-      return subtotal * mileage;
+      const yearly = subtotal * mileage;
+      return period === Period.quarter
+        ? Math.floor(yearly / 4)
+        : period === Period.year
+        ? Math.floor(yearly)
+        : Math.floor(yearly / 12);
 
     case Unit.euro_per_quarter:
       return period === Period.quarter
