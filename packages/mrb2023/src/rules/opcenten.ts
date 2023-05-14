@@ -40,7 +40,7 @@ export function opcenten(output: ModelOutput, params: Params) {
     name: "Opcenten",
     description: `Provinciale opcenten voor ${
       province || "(geen provincie)"
-    }, zijnde ${opcentenPercentage * 100}%`,
+    }, zijnde ${(opcentenPercentage * 100).toFixed(2)}%`,
     reference: {
       title: "Artikel 222, Provinciewet",
       url: "https://wetten.overheid.nl/jci1.3:c:BWBR0005645&titeldeel=IV&hoofdstuk=XV&paragraaf=2&artikel=222&z=2023-01-01&g=2023-01-01",
