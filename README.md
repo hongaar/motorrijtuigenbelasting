@@ -10,9 +10,13 @@
 
 ---
 
+<center>
+
 [![Alt text](autokosten.tools.png)](https://autokosten.tools)
 
 Visit [autokosten.tools](https://autokosten.tools) to calculate Dutch car tax.
+
+</center>
 
 ---
 
