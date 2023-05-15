@@ -12,9 +12,10 @@
 
 <center>
 
-[![Alt text](autokosten.tools.png)](https://autokosten.tools)
+<a href="https://autokosten.tools"><img src="autokosten.tools.png" alt="autokosten.tools" /></a>
 
-Visit [autokosten.tools](https://autokosten.tools) to calculate Dutch car tax.
+Visit <a href="https://autokosten.tools">autokosten.tools</a> to calculate Dutch
+car tax.
 
 </center>
 
