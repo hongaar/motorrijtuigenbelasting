@@ -2,13 +2,17 @@
 
 **Calculate Dutch car tax (motorrijtuigenbelasting) in JavaScript**
 
----
-
 > **Note**: **in development**
 >
 > This module is in development. The implemented rules are tested and verified,
 > but quite some rules are not implemented yet. [Contributions](#contributing)
 > are very welcome!
+
+---
+
+[![Alt text](autokosten.tools.png)](https://autokosten.tools)
+
+Visit [autokosten.tools](https://autokosten.tools) to calculate Dutch car tax.
 
 ---
 
