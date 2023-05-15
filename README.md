@@ -10,14 +10,11 @@
 
 ---
 
-<center>
-
-<a href="https://autokosten.tools"><img src="autokosten.tools.png" alt="autokosten.tools" /></a>
-
-Visit <a href="https://autokosten.tools">autokosten.tools</a> to calculate Dutch
-car tax.
-
-</center>
+<p align="center">
+  <a href="https://autokosten.tools"><img src="autokosten.tools.png" alt="autokosten.tools" /></a><br/>
+  Visit <a href="https://autokosten.tools">autokosten.tools</a> to calculate Dutch
+  car tax.
+</p>
 
 ---
 
