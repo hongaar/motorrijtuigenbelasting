@@ -1,3 +1,11 @@
+## [3.2.3](https://github.com/hongaar/motorrijtuigenbelasting/compare/v3.2.2...v3.2.3) (2023-07-03)
+
+### Bug Fixes
+
+- **deps:** bump cross-fetch from 3.1.6 to 3.1.8
+  ([#71](https://github.com/hongaar/motorrijtuigenbelasting/issues/71))
+  ([21b6883](https://github.com/hongaar/motorrijtuigenbelasting/commit/21b6883b34ac19d9f9ed99417ca9a1e6a13d7524))
+
 ## [3.2.2](https://github.com/hongaar/motorrijtuigenbelasting/compare/v3.2.1...v3.2.2) (2023-05-15)
 
 ### Bug Fixes
