@@ -844,7 +844,7 @@ __metadata:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb2023": "workspace:*"
     "@types/jest": 29.5.4
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     jest: 29.6.4
     ts-jest: 29.1.1
     typescript: 5.2.2
@@ -861,7 +861,7 @@ __metadata:
     "@motorrijtuigenbelasting/rdw": "workspace:*"
     "@types/jest": 29.5.4
     "@types/js-yaml": 4.0.5
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     bandersnatch: 1.12.6
     jest: 29.6.4
     js-yaml: 4.1.0
@@ -877,7 +877,7 @@ __metadata:
   resolution: "@motorrijtuigenbelasting/core@workspace:packages/core"
   dependencies:
     "@types/jest": 29.5.4
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     jest: 29.6.4
     ts-jest: 29.1.1
     typescript: 5.2.2
@@ -890,7 +890,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@types/jest": 29.5.4
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     jest: 29.6.4
     ts-jest: 29.1.1
     typescript: 5.2.2
@@ -904,7 +904,7 @@ __metadata:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb1995": "workspace:*"
     "@types/jest": 29.5.4
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     jest: 29.6.4
     ts-jest: 29.1.1
     typescript: 5.2.2
@@ -917,7 +917,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@types/jest": 29.5.4
-    "@types/node": 20.5.1
+    "@types/node": 20.5.7
     cross-fetch: 4.0.0
     jest: 29.6.4
     ts-jest: 29.1.1
@@ -1660,10 +1660,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.5.1":
-  version: 20.5.1
-  resolution: "@types/node@npm:20.5.1"
-  checksum: 3dbe611cd67afa987102c8558ee70f848949c5dcfee5f60abc073e55c0d7b048e391bf06bb1e0dc052cb7210ca97136ac496cbaf6e89123c989de6bd125fde82
+"@types/node@npm:20.5.7":
+  version: 20.5.7
+  resolution: "@types/node@npm:20.5.7"
+  checksum: fc284c8e16ddc04569730d58e87eae349eb1c3dd9020cb79a1862d9d9add6f04e7367a236f3252db8db2572f90278e250f4cd43d27d264972b54394eaba1ed76
   languageName: node
   linkType: hard
 
