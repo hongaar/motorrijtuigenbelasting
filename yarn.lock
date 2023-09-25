@@ -816,38 +816,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@mokr/core@npm:1.4.0"
+"@mokr/core@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@mokr/core@npm:1.6.1"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
-    hosted-git-info: 7.0.0
+    hosted-git-info: 7.0.1
     license: 1.0.3
     ora: 7.0.1
     pkg-up: ^4.0.0
     sort-package-json: 2.5.1
     yaml: 2.3.2
-  checksum: c429f86be71cb29e7bc90eb94e39528e43da4081059c48edfc44dcd932ac24509c4a12bd6c5991f154e6f0b44835e3ef6db05b2b6a84e3787e1c9ba864ed36f3
+  checksum: 6ce1bc1601fc3a01a8490c31ed5817c084964ee5f04affd81c6b65e25fe48a13d8681bc636cd0d8a6ce872c631b7a0a795ebeb3744e4b077c18d359edd9954b3
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@mokr/plugins@npm:1.4.0"
+"@mokr/plugins@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@mokr/plugins@npm:1.6.1"
   dependencies:
-    "@mokr/core": 1.4.0
-  checksum: 205412e9d227b6565744fc5ad5053c3f0de3aebf4ad3a558f2c5b8663b7d108ab9b56a3bcbc836051ad306c2ac9515b5e53d0c1e994545e215ba843962a092d8
+    "@mokr/core": 1.6.1
+  checksum: c0cf6d4eb1637adb38ca9fda9c45752a6f16085aa9c9cccc709fdabba0bd24cbddb028d4d0096dbb8c41439b1f066ef5127ae6968bf48dd68dd716359a7952b2
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@mokr/templates@npm:1.4.0"
+"@mokr/templates@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@mokr/templates@npm:1.6.1"
   dependencies:
-    "@mokr/core": 1.4.0
-    "@mokr/plugins": 1.4.0
-  checksum: d6c5b90c9f3d2bbcd9ce36fc8233e5c6b0ee2097def5191077c562a3eb62029eb832f20174e5ff82b73318cf1439e46dd34ea17d00391ee6f1972c9e39b7ca2e
+    "@mokr/core": 1.6.1
+    "@mokr/plugins": 1.6.1
+  checksum: 4037a703c16ae2ebc1dfea5b4df714f7bf33754eefd4cfcb28026d1c604decc125227485b7b94d7a64a700738b2a02f50b43fdb93da3a024ade02e2d19214c41
   languageName: node
   linkType: hard
 
@@ -3910,12 +3910,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:7.0.0, hosted-git-info@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "hosted-git-info@npm:7.0.0"
+"hosted-git-info@npm:7.0.1":
+  version: 7.0.1
+  resolution: "hosted-git-info@npm:7.0.1"
   dependencies:
     lru-cache: ^10.0.1
-  checksum: b892237a3867f827f97e229e2b6ddf17d3ed674f003475c12ecbfc6269416db3a643c1ee3c5d4a989e3f3a596dd1470ee4017fe911710e47aeb7d9319737c05e
+  checksum: be5280f0a20d6153b47e1ab578e09f5ae8ad734301b3ed7e547dc88a6814d7347a4888db1b4f9635cc738e3c0ef1fbff02272aba7d07c75d4c5a50ff8d618db6
   languageName: node
   linkType: hard
 
@@ -3925,6 +3925,15 @@ __metadata:
   dependencies:
     lru-cache: ^7.5.1
   checksum: fcd3ca2eaa05f3201425ccbb8aa47f88cdda4a3a6d79453f8e269f7171356278bd1db08f059d8439eb5eaa91c6a8a20800fc49cca6e9e4e899b202a332d5ba6b
+  languageName: node
+  linkType: hard
+
+"hosted-git-info@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "hosted-git-info@npm:7.0.0"
+  dependencies:
+    lru-cache: ^10.0.1
+  checksum: b892237a3867f827f97e229e2b6ddf17d3ed674f003475c12ecbfc6269416db3a643c1ee3c5d4a989e3f3a596dd1470ee4017fe911710e47aeb7d9319737c05e
   languageName: node
   linkType: hard
 
@@ -6105,17 +6114,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:1.4.0":
-  version: 1.4.0
-  resolution: "moker@npm:1.4.0"
+"moker@npm:1.6.1":
+  version: 1.6.1
+  resolution: "moker@npm:1.6.1"
   dependencies:
-    "@mokr/core": 1.4.0
-    "@mokr/plugins": 1.4.0
-    "@mokr/templates": 1.4.0
+    "@mokr/core": 1.6.1
+    "@mokr/plugins": 1.6.1
+    "@mokr/templates": 1.6.1
     bandersnatch: 1.12.6
   bin:
     moker: moker.js
-  checksum: 11d968c22cccc577a8da3544db6c3711e1ea8ded9adacc23dce8b29c3f7a997261424608f30a3f5dfb60b59935438f6bd86c5123bf506997c2f834dc450ed029
+  checksum: 93e3584cf333be9efc3729ea61a2c5cd72334a840fa21b9058bc42baf100608adb4a9e19527495b16019f0008f2ac1a991822a3e18ade79a4541097a9cdddfc2
   languageName: node
   linkType: hard
 
@@ -6131,7 +6140,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 14.0.1
-    moker: 1.4.0
+    moker: 1.6.1
     prettier: 3.0.3
     semantic-release: 22.0.0
     semantic-release-yarn: 2.0.1
