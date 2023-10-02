@@ -1,3 +1,21 @@
+## [3.2.7](https://github.com/hongaar/motorrijtuigenbelasting/compare/v3.2.6...v3.2.7) (2023-10-02)
+
+### Bug Fixes
+
+- **deps:** Bump bandersnatch from 1.12.6 to 1.12.7
+  ([#120](https://github.com/hongaar/motorrijtuigenbelasting/issues/120))
+  ([aec2acd](https://github.com/hongaar/motorrijtuigenbelasting/commit/aec2acd1c4f3d217b87c6c721c429419f22ee29b)),
+  closes [#514](https://github.com/hongaar/motorrijtuigenbelasting/issues/514)
+  [#514](https://github.com/hongaar/motorrijtuigenbelasting/issues/514)
+  [#513](https://github.com/hongaar/motorrijtuigenbelasting/issues/513)
+  [#512](https://github.com/hongaar/motorrijtuigenbelasting/issues/512)
+  [#511](https://github.com/hongaar/motorrijtuigenbelasting/issues/511)
+  [#510](https://github.com/hongaar/motorrijtuigenbelasting/issues/510)
+  [#509](https://github.com/hongaar/motorrijtuigenbelasting/issues/509)
+  [#508](https://github.com/hongaar/motorrijtuigenbelasting/issues/508)
+  [#507](https://github.com/hongaar/motorrijtuigenbelasting/issues/507)
+  [#506](https://github.com/hongaar/motorrijtuigenbelasting/issues/506)
+
 ## [3.2.6](https://github.com/hongaar/motorrijtuigenbelasting/compare/v3.2.5...v3.2.6) (2023-08-07)
 
 ### Bug Fixes
