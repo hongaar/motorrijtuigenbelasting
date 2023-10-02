@@ -816,9 +816,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@mokr/core@npm:1.6.1"
+"@mokr/core@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@mokr/core@npm:2.0.0"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
@@ -828,26 +828,26 @@ __metadata:
     pkg-up: ^4.0.0
     sort-package-json: 2.5.1
     yaml: 2.3.2
-  checksum: 6ce1bc1601fc3a01a8490c31ed5817c084964ee5f04affd81c6b65e25fe48a13d8681bc636cd0d8a6ce872c631b7a0a795ebeb3744e4b077c18d359edd9954b3
+  checksum: 29f7b63971fb91945dbc543ae93f97f00b1de76d07c202fe591bc890a9210257c6ae525ee34306ff219df46f2bf7516d6682e944132d70faa72357707f668b72
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@mokr/plugins@npm:1.6.1"
+"@mokr/plugins@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@mokr/plugins@npm:2.0.0"
   dependencies:
-    "@mokr/core": 1.6.1
-  checksum: c0cf6d4eb1637adb38ca9fda9c45752a6f16085aa9c9cccc709fdabba0bd24cbddb028d4d0096dbb8c41439b1f066ef5127ae6968bf48dd68dd716359a7952b2
+    "@mokr/core": 2.0.0
+  checksum: 686c5d9978243cbbfa13e7fde68221cce8a2d24caffa25360138bab2013fe5858b0c11044cf9a85c68717ff3de316569ef048744d2859d994e66a7e35ffebeef
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@mokr/templates@npm:1.6.1"
+"@mokr/templates@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@mokr/templates@npm:2.0.0"
   dependencies:
-    "@mokr/core": 1.6.1
-    "@mokr/plugins": 1.6.1
-  checksum: 4037a703c16ae2ebc1dfea5b4df714f7bf33754eefd4cfcb28026d1c604decc125227485b7b94d7a64a700738b2a02f50b43fdb93da3a024ade02e2d19214c41
+    "@mokr/core": 2.0.0
+    "@mokr/plugins": 2.0.0
+  checksum: ef7ce75fa9d3f47707d708909a3dd94bbb32c02418bf790628d09721ae983086bcc8893039acacc2f1f8241513043b24f2bc6ad89aa9ca5e0f326f645b1a1a4e
   languageName: node
   linkType: hard
 
@@ -1794,6 +1794,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/yargs@npm:17.0.25":
+  version: 17.0.25
+  resolution: "@types/yargs@npm:17.0.25"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: ef57926de514f5eb0a182167a63930bd7d2eb33d89b6041760f690d50b2019d7901b30c33ab7d03b3fa66a5004f0f81e36186d8f9e5e583a27b9ce331d2a5276
+  languageName: node
+  linkType: hard
+
 "@types/yargs@npm:^17.0.8":
   version: 17.0.22
   resolution: "@types/yargs@npm:17.0.22"
@@ -2174,6 +2183,19 @@ __metadata:
     typed-emitter: ^2.1.0
     yargs: ^17.5.1
   checksum: 07b364c93efe0293eeb5cf7eaea609160d2a2dd42af699ae586439d4bc056491accd58ccb371a227e910f0af818e722ab559d3f8389e05329438cbdac0f345e0
+  languageName: node
+  linkType: hard
+
+"bandersnatch@npm:1.12.7":
+  version: 1.12.7
+  resolution: "bandersnatch@npm:1.12.7"
+  dependencies:
+    "@types/yargs": 17.0.25
+    enquirer: ^2.3.6
+    string-argv: ^0.3.1
+    typed-emitter: ^2.1.0
+    yargs: ^17.5.1
+  checksum: 1af7e00107947a5eea99e64dbafd46ef8cab8e0fc81278f222bbc2fc15df5a6a04bbf6430cef0c5fe6f003c2fce5c2cda298c873b0df4b977cad3f9f10467c9b
   languageName: node
   linkType: hard
 
@@ -6120,17 +6142,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:1.6.1":
-  version: 1.6.1
-  resolution: "moker@npm:1.6.1"
+"moker@npm:2.0.0":
+  version: 2.0.0
+  resolution: "moker@npm:2.0.0"
   dependencies:
-    "@mokr/core": 1.6.1
-    "@mokr/plugins": 1.6.1
-    "@mokr/templates": 1.6.1
-    bandersnatch: 1.12.6
+    "@mokr/core": 2.0.0
+    "@mokr/plugins": 2.0.0
+    "@mokr/templates": 2.0.0
+    bandersnatch: 1.12.7
   bin:
     moker: moker.js
-  checksum: 93e3584cf333be9efc3729ea61a2c5cd72334a840fa21b9058bc42baf100608adb4a9e19527495b16019f0008f2ac1a991822a3e18ade79a4541097a9cdddfc2
+  checksum: 0dcaa7966450409d93b4f1afab3abde5c7e8a4c6392570812edb611528e06e266dc24ee69d73b4e352c72a63c601091725637df5fd9ae039d9ef73a629783b87
   languageName: node
   linkType: hard
 
@@ -6146,7 +6168,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 14.0.1
-    moker: 1.6.1
+    moker: 2.0.0
     prettier: 3.0.3
     semantic-release: 22.0.5
     semantic-release-yarn: 2.0.1
