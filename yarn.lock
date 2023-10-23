@@ -816,9 +816,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@mokr/core@npm:2.0.4"
+"@mokr/core@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@mokr/core@npm:2.0.6"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
@@ -827,27 +827,27 @@ __metadata:
     ora: 7.0.1
     pkg-up: ^4.0.0
     sort-package-json: 2.6.0
-    yaml: 2.3.2
-  checksum: e5074961b6999fbf2db76bea1b7e4d0ad5e2987ea30446faab949fba9861ff9bf578ff184d9d4d5d96e4c9f4eeeca9763c8f73e0903ea93d7c7e6c51b0e07cbc
+    yaml: 2.3.3
+  checksum: bf4be5e0c6b2b51bb6b9f519ee5d50e430cab13983648c7f9b233d18413815717e03d1c8325cceac8c7bfdaf74f91ced876f90d7c640e41b3516fc99da9f16bf
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@mokr/plugins@npm:2.0.4"
+"@mokr/plugins@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@mokr/plugins@npm:2.0.6"
   dependencies:
-    "@mokr/core": 2.0.4
-  checksum: dfaa205f959e384494d0cc0bf810a5bcc418eefd2c3d05136723edd2fbb8eb210879266c208640afa008497c90a8914965d280dfa4d092a9a1f3a2e198f391fd
+    "@mokr/core": 2.0.6
+  checksum: c6ea96fd3ac94877d32023f95eb2bd28e751cb0deae225b0d7a2bac95c30ea84af7fde42aeb618c9bb896b577342260b9eaa73e764cb5efdeb320a3906e758fc
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@mokr/templates@npm:2.0.4"
+"@mokr/templates@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@mokr/templates@npm:2.0.6"
   dependencies:
-    "@mokr/core": 2.0.4
-    "@mokr/plugins": 2.0.4
-  checksum: 818e654cdedbbf38ff69a70947db3a522e4bac045538dc2771117f2e1ad3c175123d4913ac6124e25b5535438ba74401668af35b1dc8357b7bc341c6cbeb5d93
+    "@mokr/core": 2.0.6
+    "@mokr/plugins": 2.0.6
+  checksum: 13002312e52e51cbfe7cbf488e681f13ffce5fa9ee246e5ee48bd28f0168a41a604d8482cbca88645ce472013cbe5b034a8f292f7469fe236ff334997ab199b4
   languageName: node
   linkType: hard
 
@@ -1796,6 +1796,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/yargs@npm:17.0.28":
+  version: 17.0.28
+  resolution: "@types/yargs@npm:17.0.28"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: f78c5e5c29903933c0557b4ffcd1d0b8564d66859c8ca4aa51da3714e49109ed7c2644334a1918d033df19028f4cecc91fd2e502651bb8e8451f246c371da847
+  languageName: node
+  linkType: hard
+
 "@types/yargs@npm:^17.0.8":
   version: 17.0.22
   resolution: "@types/yargs@npm:17.0.22"
@@ -2176,6 +2185,19 @@ __metadata:
     typed-emitter: ^2.1.0
     yargs: ^17.5.1
   checksum: 5322a532cb1603855743463640cac8e9fcc59dde703943ab6e4d395ec5f3af0cee3b952f5373c4dbc90ac27292c94b84f62c9626b55f889394ce69659c2614e8
+  languageName: node
+  linkType: hard
+
+"bandersnatch@npm:1.12.9":
+  version: 1.12.9
+  resolution: "bandersnatch@npm:1.12.9"
+  dependencies:
+    "@types/yargs": 17.0.28
+    enquirer: ^2.3.6
+    string-argv: ^0.3.1
+    typed-emitter: ^2.1.0
+    yargs: ^17.5.1
+  checksum: 09b59b137dbfd31acfe89b3fe533d2893ca01aec21d0cd778eb70f4eabe33d560885214627c31bcc306ff457372865d535672657162384b65e5d79be53842583
   languageName: node
   linkType: hard
 
@@ -6093,17 +6115,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.0.4":
-  version: 2.0.4
-  resolution: "moker@npm:2.0.4"
+"moker@npm:2.0.6":
+  version: 2.0.6
+  resolution: "moker@npm:2.0.6"
   dependencies:
-    "@mokr/core": 2.0.4
-    "@mokr/plugins": 2.0.4
-    "@mokr/templates": 2.0.4
-    bandersnatch: 1.12.8
+    "@mokr/core": 2.0.6
+    "@mokr/plugins": 2.0.6
+    "@mokr/templates": 2.0.6
+    bandersnatch: 1.12.9
   bin:
     moker: moker.js
-  checksum: 61c5a5234785ab72e4cb480a089ea424c40e43424ebed2b4d0e9f04b505ee42e6e63e4a5d582ce51cc68012d6f0730bfaf18448651a7e04898a9461cc0288a90
+  checksum: 6e0cbdfa47f13c23b7a39b0e3d7b4efe26f785a2c51fc701892db4806c82c315d25b110aaf7fedc168407e9c601b79cf6831363368340c37e1d85f23ec3c633a
   languageName: node
   linkType: hard
 
@@ -6119,7 +6141,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.0.1
-    moker: 2.0.4
+    moker: 2.0.6
     prettier: 3.0.3
     semantic-release: 22.0.5
     semantic-release-yarn: 2.0.1
@@ -8825,6 +8847,13 @@ __metadata:
   version: 2.3.2
   resolution: "yaml@npm:2.3.2"
   checksum: acd80cc24df12c808c6dec8a0176d404ef9e6f08ad8786f746ecc9d8974968c53c6e8a67fdfabcc5f99f3dc59b6bb0994b95646ff03d18e9b1dcd59eccc02146
+  languageName: node
+  linkType: hard
+
+"yaml@npm:2.3.3":
+  version: 2.3.3
+  resolution: "yaml@npm:2.3.3"
+  checksum: cdfd132e7e0259f948929efe8835923df05c013c273c02bb7a2de9b46ac3af53c2778a35b32c7c0f877cc355dc9340ed564018c0242bfbb1278c2a3e53a0e99e
   languageName: node
   linkType: hard
 
