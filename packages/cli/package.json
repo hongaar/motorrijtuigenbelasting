@@ -1,6 +1,6 @@
 {
   "name": "@motorrijtuigenbelasting/cli",
-  "version": "3.2.9",
+  "version": "3.2.10",
   "repository": "github:hongaar/motorrijtuigenbelasting",
   "license": "MIT",
   "author": "Joram van den Boezem <joram@vandenboezem.nl>",
