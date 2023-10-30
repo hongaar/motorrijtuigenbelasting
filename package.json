@@ -34,7 +34,7 @@
     "jest": "29.7.0",
     "leasot": "13.3.0",
     "lint-staged": "15.0.2",
-    "moker": "2.0.6",
+    "moker": "2.1.1",
     "prettier": "3.0.3",
     "semantic-release": "22.0.5",
     "semantic-release-yarn": "3.0.2",
