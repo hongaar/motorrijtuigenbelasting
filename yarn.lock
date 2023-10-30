@@ -876,7 +876,7 @@ __metadata:
     "@types/jest": 29.5.6
     "@types/js-yaml": 4.0.8
     "@types/node": 20.8.9
-    bandersnatch: 1.12.10
+    bandersnatch: 1.12.11
     jest: 29.7.0
     js-yaml: 4.1.0
     ts-jest: 29.1.1
@@ -1787,15 +1787,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/yargs@npm:17.0.28":
-  version: 17.0.28
-  resolution: "@types/yargs@npm:17.0.28"
-  dependencies:
-    "@types/yargs-parser": "*"
-  checksum: f78c5e5c29903933c0557b4ffcd1d0b8564d66859c8ca4aa51da3714e49109ed7c2644334a1918d033df19028f4cecc91fd2e502651bb8e8451f246c371da847
-  languageName: node
-  linkType: hard
-
 "@types/yargs@npm:17.0.29":
   version: 17.0.29
   resolution: "@types/yargs@npm:17.0.29"
@@ -2172,19 +2163,6 @@ __metadata:
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
   checksum: 9706c088a283058a8a99e0bf91b0a2f75497f185980d9ffa8b304de1d9e58ebda7c72c07ebf01dadedaac5b2907b2c6f566f660d62bd336c3468e960403b9d65
-  languageName: node
-  linkType: hard
-
-"bandersnatch@npm:1.12.10":
-  version: 1.12.10
-  resolution: "bandersnatch@npm:1.12.10"
-  dependencies:
-    "@types/yargs": 17.0.28
-    enquirer: ^2.3.6
-    string-argv: ^0.3.1
-    typed-emitter: ^2.1.0
-    yargs: ^17.5.1
-  checksum: a1ab4327034d3ff397670905777f8ff3a476f4b5a91b605af8a23ed9f1b2fd2fff8fbeec05c46f4b8e4c2a057ab67da0a18b53902049f1fdbc460d0226f37e30
   languageName: node
   linkType: hard
 
