@@ -844,38 +844,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@mokr/core@npm:2.1.1"
+"@mokr/core@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@mokr/core@npm:2.1.2"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
     hosted-git-info: 7.0.1
     license: 1.0.3
     ora: 7.0.1
-    pkg-up: ^4.0.0
+    pkg-up: ^5.0.0
     sort-package-json: 2.6.0
-    yaml: 2.3.3
-  checksum: 9f73cf21c91b682030b72ee6aad2251d2e1915e183dd5fcd3303eebab2edf9bf4218e32d3e0413c237ff16de01d5612ffeb3c2fd162829d5351eedab6850126e
+    yaml: 2.3.4
+  checksum: d4d8a5ab2c4af5046eb717062b027861de255eb9a06abef8dbf9988275844fd24f1d2b7336462dc0547c8990f0a0f5837c0c22426070dcb17127a88fa9caf7e4
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@mokr/plugins@npm:2.1.1"
+"@mokr/plugins@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@mokr/plugins@npm:2.1.2"
   dependencies:
-    "@mokr/core": 2.1.1
-  checksum: 1f6c1609ba4c5959737786f41433229ac02df95a8da84c8c5da459e872f1d60b70d237cd17a2c6c49f54dc3b6fb0af1fbcd2453dde4335712819d1060b124267
+    "@mokr/core": 2.1.2
+  checksum: 70b3d7d2690694bc49d95ae1c0925b75db7ab4cf9899c4168019a2bcd7c8f66e0f3b132573f444e4d29037d097dc2fab32de5cd460d31c31071a5c8e4d3e1490
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@mokr/templates@npm:2.1.1"
+"@mokr/templates@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@mokr/templates@npm:2.1.2"
   dependencies:
-    "@mokr/core": 2.1.1
-    "@mokr/plugins": 2.1.1
-  checksum: a6ee331e8b94819963e3e6c94d2c46f9b07196f8f771e4c10e44f75d19c813a4234f699e4ed7967f6ea25470d3a2813133e6996e108dc27bb920452736cfdd81
+    "@mokr/core": 2.1.2
+    "@mokr/plugins": 2.1.2
+  checksum: 19000c12d79f9eb24a00c47a8fdfa48a6fdf74ac55b1629d4600b566f51f2e6b2b13fe66a52ffe17fcd9dd8ae386ea6e3b8f472651579734f6cd387f917bca5e
   languageName: node
   linkType: hard
 
@@ -6148,17 +6148,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.1.1":
-  version: 2.1.1
-  resolution: "moker@npm:2.1.1"
+"moker@npm:2.1.2":
+  version: 2.1.2
+  resolution: "moker@npm:2.1.2"
   dependencies:
-    "@mokr/core": 2.1.1
-    "@mokr/plugins": 2.1.1
-    "@mokr/templates": 2.1.1
+    "@mokr/core": 2.1.2
+    "@mokr/plugins": 2.1.2
+    "@mokr/templates": 2.1.2
     bandersnatch: 1.12.11
   bin:
     moker: moker.js
-  checksum: e2e532705cef5ffcfeb6e0638bd50396491e866695b7eca1f809368a12e63de5877f057221d409c7d27100d2d8755f514c40983ab44a2ef685aba5b3280d2012
+  checksum: 51a7bc3eb1ad38cebe093cffe6405567b52d7d6cfe44402053c4b498461268ad1e6decb7a46c8521e95422f0d5cf4cb54892d293eddac1f3c2059dbaf32fdba2
   languageName: node
   linkType: hard
 
@@ -6174,7 +6174,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.0.2
-    moker: 2.1.1
+    moker: 2.1.2
     prettier: 3.0.3
     semantic-release: 22.0.7
     semantic-release-yarn: 3.0.2
@@ -7052,12 +7052,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-up@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "pkg-up@npm:4.0.0"
+"pkg-up@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "pkg-up@npm:5.0.0"
   dependencies:
     find-up: ^6.2.0
-  checksum: c21fe318917fd384750a44699e915eae4005971f39b8b498e736035f6887fd48b6a7a169375607d2df89798a1a3ad73d7b3d0dedd4ebef8c3ec434364eedc452
+  checksum: dccefcfb96f5d7b976a27038e7c065384d3068b418bcb0626b65cf77e96d9e9afab622cf207b11d79ba37501b6f933b8612edb9f904a5f8daf120f3095f249ac
   languageName: node
   linkType: hard
 
@@ -8922,6 +8922,13 @@ __metadata:
   version: 2.3.3
   resolution: "yaml@npm:2.3.3"
   checksum: cdfd132e7e0259f948929efe8835923df05c013c273c02bb7a2de9b46ac3af53c2778a35b32c7c0f877cc355dc9340ed564018c0242bfbb1278c2a3e53a0e99e
+  languageName: node
+  linkType: hard
+
+"yaml@npm:2.3.4":
+  version: 2.3.4
+  resolution: "yaml@npm:2.3.4"
+  checksum: e6d1dae1c6383bcc8ba11796eef3b8c02d5082911c6723efeeb5ba50fc8e881df18d645e64de68e421b577296000bea9c75d6d9097c2f6699da3ae0406c030d8
   languageName: node
   linkType: hard
 
