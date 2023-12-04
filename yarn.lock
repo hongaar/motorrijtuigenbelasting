@@ -844,9 +844,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.1.3":
-  version: 2.1.3
-  resolution: "@mokr/core@npm:2.1.3"
+"@mokr/core@npm:2.1.4":
+  version: 2.1.4
+  resolution: "@mokr/core@npm:2.1.4"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
@@ -856,26 +856,26 @@ __metadata:
     pkg-up: ^5.0.0
     sort-package-json: 2.6.0
     yaml: 2.3.4
-  checksum: cdab132fa3b87eeaaa3ee897778dea7a2f367a601d0d7a7ea16928361c413aea2b22537cdecfbc82837b81caba4313476359c8c76762f36174df70c8e6811b21
+  checksum: 3d31a68789d24ceee7585f6f7eb595be49230367aa310666111d9c16147be07c01f1a493dced85e3c6a8ff0007440332305ab0a75129296f66a37bcdd25ee193
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.1.3":
-  version: 2.1.3
-  resolution: "@mokr/plugins@npm:2.1.3"
+"@mokr/plugins@npm:2.1.4":
+  version: 2.1.4
+  resolution: "@mokr/plugins@npm:2.1.4"
   dependencies:
-    "@mokr/core": 2.1.3
-  checksum: 57f21f4107d9ee283dea1e2c261063f2d8c36f8d73505bda70919b1c41b1d9afb4a9e26baf6789047463eeb33fc7df89411efed8aaf1750c37e71fd0e73c4a21
+    "@mokr/core": 2.1.4
+  checksum: 9fbd35c0148a6d66d4d2c407776412bfff6d55cae1d92d64010b89e3cb002675a0357464b1374a2d354d4d103aa43c3ae2be75b823e9ac9991502fd4967c7a8e
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.1.3":
-  version: 2.1.3
-  resolution: "@mokr/templates@npm:2.1.3"
+"@mokr/templates@npm:2.1.4":
+  version: 2.1.4
+  resolution: "@mokr/templates@npm:2.1.4"
   dependencies:
-    "@mokr/core": 2.1.3
-    "@mokr/plugins": 2.1.3
-  checksum: 5d42b841a234b26c8979d2d9e0b5935ffb924ca0ad0401f8040dbbc762eb0492fbbd4cc8735dad5a8e65c9dfb614b802a678ce21b7b1524a5887443f5bc511d5
+    "@mokr/core": 2.1.4
+    "@mokr/plugins": 2.1.4
+  checksum: 794a47c7c4e7c403fd5d42bbe3b479a15f40b126a386f2ba48bb8af14814521e345b38d15dd53f4735fe9bc0079b21dd932114f89fbcc661b02ec9133fd1f569
   languageName: node
   linkType: hard
 
@@ -1831,6 +1831,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/yargs@npm:17.0.32":
+  version: 17.0.32
+  resolution: "@types/yargs@npm:17.0.32"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: 4505bdebe8716ff383640c6e928f855b5d337cb3c68c81f7249fc6b983d0aa48de3eee26062b84f37e0d75a5797bc745e0c6e76f42f81771252a758c638f36ba
+  languageName: node
+  linkType: hard
+
 "@types/yargs@npm:^17.0.8":
   version: 17.0.22
   resolution: "@types/yargs@npm:17.0.22"
@@ -2211,6 +2220,19 @@ __metadata:
     typed-emitter: ^2.1.0
     yargs: ^17.5.1
   checksum: bd0c54bef4d2853b768e8f0a75ad5cc0a3fb9d49459553d40636750a968a2893592e22c889ca88844d39c8d6965c66bbe01d53d1667f43ad264373e92cac5a53
+  languageName: node
+  linkType: hard
+
+"bandersnatch@npm:1.12.13":
+  version: 1.12.13
+  resolution: "bandersnatch@npm:1.12.13"
+  dependencies:
+    "@types/yargs": 17.0.32
+    enquirer: ^2.3.6
+    string-argv: ^0.3.1
+    typed-emitter: ^2.1.0
+    yargs: ^17.5.1
+  checksum: 19f23921cf06fa1dde27cec64a0ab7584d7d92bf906edb1e8e7c9bdf42dc2458fc41e2260b9b32c2d0c37246884ac8643a4a8fcf2e47357bcaf42a7755265a50
   languageName: node
   linkType: hard
 
@@ -6165,17 +6187,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.1.3":
-  version: 2.1.3
-  resolution: "moker@npm:2.1.3"
+"moker@npm:2.1.4":
+  version: 2.1.4
+  resolution: "moker@npm:2.1.4"
   dependencies:
-    "@mokr/core": 2.1.3
-    "@mokr/plugins": 2.1.3
-    "@mokr/templates": 2.1.3
-    bandersnatch: 1.12.12
+    "@mokr/core": 2.1.4
+    "@mokr/plugins": 2.1.4
+    "@mokr/templates": 2.1.4
+    bandersnatch: 1.12.13
   bin:
     moker: moker.js
-  checksum: 45ffc955257372b71637e3404e19c340d700f94bd365e822c4157a0d5e55f61f32f40c3abfc434d85cd53ee26c6d9cd02de7e4eadb6871884e79dac3ef92f1ef
+  checksum: 29ee177ec2ab1d679049a4cf0e9426568596861af92d92f7547ef7d4b722a13dbbe046e76fe77cbf8d4e64aa7b067a646700d06e5893283f1631a3394bf3cf4c
   languageName: node
   linkType: hard
 
@@ -6191,7 +6213,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.1.0
-    moker: 2.1.3
+    moker: 2.1.4
     prettier: 3.1.0
     semantic-release: 22.0.8
     semantic-release-yarn: 3.0.2
