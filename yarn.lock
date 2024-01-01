@@ -844,38 +844,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.1.4":
-  version: 2.1.4
-  resolution: "@mokr/core@npm:2.1.4"
+"@mokr/core@npm:2.1.5":
+  version: 2.1.5
+  resolution: "@mokr/core@npm:2.1.5"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
     hosted-git-info: 7.0.1
     license: 1.0.3
-    ora: 7.0.1
+    ora: 8.0.1
     pkg-up: ^5.0.0
     sort-package-json: 2.6.0
     yaml: 2.3.4
-  checksum: 3d31a68789d24ceee7585f6f7eb595be49230367aa310666111d9c16147be07c01f1a493dced85e3c6a8ff0007440332305ab0a75129296f66a37bcdd25ee193
+  checksum: e84ac8adad861b8e7aac5e4fd4d496dceb9bf03dfefc4966b9ac590b3a16adf589701a0c4e28f38d5c17edcd8e9e61519284a2b8b29b2f4abf2caa678d607865
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.1.4":
-  version: 2.1.4
-  resolution: "@mokr/plugins@npm:2.1.4"
+"@mokr/plugins@npm:2.1.5":
+  version: 2.1.5
+  resolution: "@mokr/plugins@npm:2.1.5"
   dependencies:
-    "@mokr/core": 2.1.4
-  checksum: 9fbd35c0148a6d66d4d2c407776412bfff6d55cae1d92d64010b89e3cb002675a0357464b1374a2d354d4d103aa43c3ae2be75b823e9ac9991502fd4967c7a8e
+    "@mokr/core": 2.1.5
+  checksum: a6606551093ceba9eb767c62994a92e9b66ad9a9d22b87ed686638497d4850ee98d94951c809db05a3a01caaa4cf20194e7725d44f428a720d375c5b2fb8da83
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.1.4":
-  version: 2.1.4
-  resolution: "@mokr/templates@npm:2.1.4"
+"@mokr/templates@npm:2.1.5":
+  version: 2.1.5
+  resolution: "@mokr/templates@npm:2.1.5"
   dependencies:
-    "@mokr/core": 2.1.4
-    "@mokr/plugins": 2.1.4
-  checksum: 794a47c7c4e7c403fd5d42bbe3b479a15f40b126a386f2ba48bb8af14814521e345b38d15dd53f4735fe9bc0079b21dd932114f89fbcc661b02ec9133fd1f569
+    "@mokr/core": 2.1.5
+    "@mokr/plugins": 2.1.5
+  checksum: ebc96d35d9b35d5bf9ca3bb5baacf3bc3afedc2d78de2fcccc1ccd5974b1e7a2181cdc5379f98ec3d6f8d93e7165fff378409d0728ad6939bb0a1d05c0084ab5
   languageName: node
   linkType: hard
 
@@ -2238,17 +2238,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "bl@npm:5.1.0"
-  dependencies:
-    buffer: ^6.0.3
-    inherits: ^2.0.4
-    readable-stream: ^3.4.0
-  checksum: a7a438ee0bc540e80b8eb68cc1ad759a9c87df06874a99411d701d01cc0b36f30cd20050512ac3e77090138890960e07bfee724f3ee6619bb39a569f5cc3b1bc
-  languageName: node
-  linkType: hard
-
 "bottleneck@npm:^2.15.3":
   version: 2.19.5
   resolution: "bottleneck@npm:2.19.5"
@@ -2593,10 +2582,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-spinners@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "cli-spinners@npm:2.9.0"
-  checksum: a9c56e1f44457d4a9f4f535364e729cb8726198efa9e98990cfd9eda9e220dfa4ba12f92808d1be5e29029cdfead781db82dc8549b97b31c907d55f96aa9b0e2
+"cli-spinners@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "cli-spinners@npm:2.9.2"
+  checksum: 1bd588289b28432e4676cb5d40505cfe3e53f2e4e10fbe05c8a710a154d6fe0ce7836844b00d6858f740f2ffe67cdc36e0fce9c7b6a8430e80e6388d5aa4956c
   languageName: node
   linkType: hard
 
@@ -3171,13 +3160,6 @@ __metadata:
   version: 0.13.1
   resolution: "emittery@npm:0.13.1"
   checksum: 2b089ab6306f38feaabf4f6f02792f9ec85fc054fda79f44f6790e61bbf6bc4e1616afb9b232e0c5ec5289a8a452f79bfa6d905a6fd64e94b49981f0934001c6
-  languageName: node
-  linkType: hard
-
-"emoji-regex@npm:^10.2.1":
-  version: 10.2.1
-  resolution: "emoji-regex@npm:10.2.1"
-  checksum: 1aa2d16881c56531fdfc03d0b36f5c2b6221cc4097499a5665b88b711dc3fb4d5b8804f0ca6f00c56e5dcf89bac75f0487eee85da1da77df3a33accc6ecbe426
   languageName: node
   linkType: hard
 
@@ -4206,7 +4188,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
+"inherits@npm:2, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -5563,6 +5545,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"log-symbols@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "log-symbols@npm:6.0.0"
+  dependencies:
+    chalk: ^5.3.0
+    is-unicode-supported: ^1.3.0
+  checksum: 510cdda36700cbcd87a2a691ea08d310a6c6b449084018f7f2ec4f732ca5e51b301ff1327aadd96f53c08318e616276c65f7fe22f2a16704fb0715d788bc3c33
+  languageName: node
+  linkType: hard
+
 "log-update@npm:^6.0.0":
   version: 6.0.0
   resolution: "log-update@npm:6.0.0"
@@ -6179,17 +6171,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.1.4":
-  version: 2.1.4
-  resolution: "moker@npm:2.1.4"
+"moker@npm:2.1.5":
+  version: 2.1.5
+  resolution: "moker@npm:2.1.5"
   dependencies:
-    "@mokr/core": 2.1.4
-    "@mokr/plugins": 2.1.4
-    "@mokr/templates": 2.1.4
+    "@mokr/core": 2.1.5
+    "@mokr/plugins": 2.1.5
+    "@mokr/templates": 2.1.5
     bandersnatch: 1.12.13
   bin:
     moker: moker.js
-  checksum: 29ee177ec2ab1d679049a4cf0e9426568596861af92d92f7547ef7d4b722a13dbbe046e76fe77cbf8d4e64aa7b067a646700d06e5893283f1631a3394bf3cf4c
+  checksum: 10e7c48c9e82d9e4d681a6105a66596545815bdc05e0fdaf723464583a31be508479af37d9650083716a403ba609cdc6acc598278dda1cbf6ab2bac00e573961
   languageName: node
   linkType: hard
 
@@ -6205,7 +6197,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.2.0
-    moker: 2.1.4
+    moker: 2.1.5
     prettier: 3.1.1
     semantic-release: 22.0.12
     semantic-release-yarn: 3.0.2
@@ -6683,20 +6675,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:7.0.1":
-  version: 7.0.1
-  resolution: "ora@npm:7.0.1"
+"ora@npm:8.0.1":
+  version: 8.0.1
+  resolution: "ora@npm:8.0.1"
   dependencies:
     chalk: ^5.3.0
     cli-cursor: ^4.0.0
-    cli-spinners: ^2.9.0
+    cli-spinners: ^2.9.2
     is-interactive: ^2.0.0
-    is-unicode-supported: ^1.3.0
-    log-symbols: ^5.1.0
-    stdin-discarder: ^0.1.0
-    string-width: ^6.1.0
+    is-unicode-supported: ^2.0.0
+    log-symbols: ^6.0.0
+    stdin-discarder: ^0.2.1
+    string-width: ^7.0.0
     strip-ansi: ^7.1.0
-  checksum: 0842b8b9a96a8586085cafdc25077c76fed8ade072c52c53e748cf40a214731d2215a4d6081d8fbd6203d2b897e834332bda53eb64afd1a5968da17daf020bff
+  checksum: 894061df204cc2b97b410d3b6073303b725bb0a25cec1fa8718632968a5ac5a965fe3dbc1dc7c481a17880b21b68547e64d5fd1a6d6c723f352c14b8d03843d9
   languageName: node
   linkType: hard
 
@@ -7363,7 +7355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^3.4.0, readable-stream@npm:^3.6.0":
+"readable-stream@npm:^3.6.0":
   version: 3.6.1
   resolution: "readable-stream@npm:3.6.1"
   dependencies:
@@ -8008,12 +8000,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stdin-discarder@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "stdin-discarder@npm:0.1.0"
-  dependencies:
-    bl: ^5.0.0
-  checksum: 85131f70ae2830144133b7a6211d56f9ac2603573f4af3d0b66e828af5e13fcdea351f9192f86bb7fed2c64604c8097bf36d50cb77d54e898ce4604c3b7b6b8f
+"stdin-discarder@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "stdin-discarder@npm:0.2.1"
+  checksum: e2401a8c7e2170c4b1900b50d36c842d27801bd27f85773f577b9ea5be13487d2089ce7b7ddadd4d60d050c73a1769d426acd71e66e0bad538783a5a04b5cd61
   languageName: node
   linkType: hard
 
@@ -8070,17 +8060,6 @@ __metadata:
     emoji-regex: ^9.2.2
     strip-ansi: ^7.0.1
   checksum: 7369deaa29f21dda9a438686154b62c2c5f661f8dda60449088f9f980196f7908fc39fdd1803e3e01541970287cf5deae336798337e9319a7055af89dafa7193
-  languageName: node
-  linkType: hard
-
-"string-width@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "string-width@npm:6.1.0"
-  dependencies:
-    eastasianwidth: ^0.2.0
-    emoji-regex: ^10.2.1
-    strip-ansi: ^7.0.1
-  checksum: 8aefb456a230c8d7fe254049b1b2d62603da1a3b6c7fc9f3332f6779583cc1c72653f9b6e4cd0c1c92befee1565d4a0a7542d09ba4ceb6d96af02fbd8425bb03
   languageName: node
   linkType: hard
 
