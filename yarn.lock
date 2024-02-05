@@ -885,7 +885,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb2023": "workspace:*"
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/node": 20.11.16
     jest: 29.7.0
     ts-jest: 29.1.2
@@ -901,7 +901,7 @@ __metadata:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb2023": "workspace:*"
     "@motorrijtuigenbelasting/rdw": "workspace:*"
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/js-yaml": 4.0.9
     "@types/node": 20.11.16
     bandersnatch: 1.12.13
@@ -918,7 +918,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@motorrijtuigenbelasting/core@workspace:packages/core"
   dependencies:
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/node": 20.11.16
     jest: 29.7.0
     ts-jest: 29.1.2
@@ -931,7 +931,7 @@ __metadata:
   resolution: "@motorrijtuigenbelasting/mrb1995@workspace:packages/mrb1995"
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/node": 20.11.16
     jest: 29.7.0
     ts-jest: 29.1.2
@@ -945,7 +945,7 @@ __metadata:
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
     "@motorrijtuigenbelasting/mrb1995": "workspace:*"
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/node": 20.11.16
     jest: 29.7.0
     ts-jest: 29.1.2
@@ -958,7 +958,7 @@ __metadata:
   resolution: "@motorrijtuigenbelasting/rdw@workspace:packages/rdw"
   dependencies:
     "@motorrijtuigenbelasting/core": "workspace:*"
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     "@types/node": 20.11.16
     cross-fetch: 4.0.0
     jest: 29.7.0
@@ -1745,13 +1745,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.11":
-  version: 29.5.11
-  resolution: "@types/jest@npm:29.5.11"
+"@types/jest@npm:29.5.12":
+  version: 29.5.12
+  resolution: "@types/jest@npm:29.5.12"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: f892a06ec9f0afa9a61cd7fa316ec614e21d4df1ad301b5a837787e046fcb40dfdf7f264a55e813ac6b9b633cb9d366bd5b8d1cea725e84102477b366df23fdd
+  checksum: 19b1efdeed9d9a60a81edc8226cdeae5af7479e493eaed273e01243891c9651f7b8b4c08fc633a7d0d1d379b091c4179bbaa0807af62542325fd72f2dd17ce1c
   languageName: node
   linkType: hard
 
@@ -6208,7 +6208,7 @@ __metadata:
   dependencies:
     "@semantic-release/changelog": 6.0.3
     "@semantic-release/git": 10.0.1
-    "@types/jest": 29.5.11
+    "@types/jest": 29.5.12
     doctoc: 2.2.1
     husky: 9.0.10
     jest: 29.7.0
