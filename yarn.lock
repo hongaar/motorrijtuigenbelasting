@@ -904,7 +904,7 @@ __metadata:
     "@types/jest": 29.5.12
     "@types/js-yaml": 4.0.9
     "@types/node": 20.12.7
-    bandersnatch: 1.12.14
+    bandersnatch: 1.12.15
     jest: 29.7.0
     js-yaml: 4.1.0
     ts-jest: 29.1.2
@@ -2247,6 +2247,19 @@ __metadata:
     typed-emitter: ^2.1.0
     yargs: ^17.5.1
   checksum: 6ebfedb7c305455e4f7beb6242f164c610f9c14f99b10d8bab69401ad5f1391424a7f92a22435d8532c229a2432218d7bdc4e8fb6f43ec7937815c6efabc7e61
+  languageName: node
+  linkType: hard
+
+"bandersnatch@npm:1.12.15":
+  version: 1.12.15
+  resolution: "bandersnatch@npm:1.12.15"
+  dependencies:
+    "@types/yargs": 17.0.32
+    enquirer: ^2.3.6
+    string-argv: ^0.3.1
+    typed-emitter: ^2.1.0
+    yargs: ^17.5.1
+  checksum: cd36a690df387753e2d20af05e81b7a2c47120ee05537047e1f4b69d471c5a9a4e1b244acf5507904d064c88c06074386d7112c5f3d609f48bcb7ccbec9f0269
   languageName: node
   linkType: hard
 
