@@ -844,9 +844,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.1.11":
-  version: 2.1.11
-  resolution: "@mokr/core@npm:2.1.11"
+"@mokr/core@npm:2.1.12":
+  version: 2.1.12
+  resolution: "@mokr/core@npm:2.1.12"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
@@ -856,26 +856,26 @@ __metadata:
     pkg-up: ^5.0.0
     sort-package-json: 2.10.0
     yaml: 2.4.1
-  checksum: 27d7f0488bf246fb2c339e0cb3d7a7c45980bab7ce454d9ba726d1d1c1dccb05183544ca557bad88151853164af5ecc72adf76161e38f0a6e8854fefc9acea07
+  checksum: de831c420ae0ef78a8d6c7ee4336036ac19e1b970e5564f72514e1ff99638fc186ebe63ef8b63a59504ed760f726112ed9c487cc76444b2db9e96e47080ed819
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.1.11":
-  version: 2.1.11
-  resolution: "@mokr/plugins@npm:2.1.11"
+"@mokr/plugins@npm:2.1.12":
+  version: 2.1.12
+  resolution: "@mokr/plugins@npm:2.1.12"
   dependencies:
-    "@mokr/core": 2.1.11
-  checksum: 8fffdf4f39cb8fc5d8f43e3d7f1d6a8f20f44eab65396c30bd624b20e014e3ffebd725c582581e94653f258ec077d2ca421da42aa1fb638ed9c0b8e87a4e9a89
+    "@mokr/core": 2.1.12
+  checksum: 83b4cbe48336df6aa9ba9ad00d5052b1576659359d1d3889b5cd7aa17b83b43e99339208bcb39f6f844f49efab579901101446490592387c9c62feaee89d67ba
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.1.11":
-  version: 2.1.11
-  resolution: "@mokr/templates@npm:2.1.11"
+"@mokr/templates@npm:2.1.12":
+  version: 2.1.12
+  resolution: "@mokr/templates@npm:2.1.12"
   dependencies:
-    "@mokr/core": 2.1.11
-    "@mokr/plugins": 2.1.11
-  checksum: 156739f41c784c421151675cc1429db4e110b95035fa7cb932b0d079c1784d3df82755a0b4f7c4cc41211fe736c0612c52c2e19a4c642eae8dd16d093784876f
+    "@mokr/core": 2.1.12
+    "@mokr/plugins": 2.1.12
+  checksum: d76d0a89542cdcdf35a17631709754e122ee1e903a077c18454bd6660796747c391c0790c6882611980a94fb1d57ad9a410411c5d1d8615ca3ffde8c36922ba0
   languageName: node
   linkType: hard
 
@@ -6295,17 +6295,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.1.11":
-  version: 2.1.11
-  resolution: "moker@npm:2.1.11"
+"moker@npm:2.1.12":
+  version: 2.1.12
+  resolution: "moker@npm:2.1.12"
   dependencies:
-    "@mokr/core": 2.1.11
-    "@mokr/plugins": 2.1.11
-    "@mokr/templates": 2.1.11
+    "@mokr/core": 2.1.12
+    "@mokr/plugins": 2.1.12
+    "@mokr/templates": 2.1.12
     bandersnatch: 1.12.14
   bin:
     moker: moker.js
-  checksum: 6f5ed708ac98550d68e62ee119baeb96bacc382572919c4207724389e4910113a149cbd1de29c1546a190d24e8eb7e0a94afa0b3be1936155bd54d0fdd574f3e
+  checksum: b7ae5a61bef30771ab3658986d1543f645b339b065013c46bf1ddfeaf969ca09e1fe126ed0d5c787fde2e8e3b81556a0622246b1e38dd50e4856fe6bf90fbc7c
   languageName: node
   linkType: hard
 
@@ -6321,7 +6321,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.2.2
-    moker: 2.1.11
+    moker: 2.1.12
     prettier: 3.2.5
     semantic-release: 23.0.7
     semantic-release-yarn: 3.0.2
