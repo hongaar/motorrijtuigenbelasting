@@ -844,9 +844,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mokr/core@npm:2.1.12":
-  version: 2.1.12
-  resolution: "@mokr/core@npm:2.1.12"
+"@mokr/core@npm:2.1.13":
+  version: 2.1.13
+  resolution: "@mokr/core@npm:2.1.13"
   dependencies:
     chalk: 5.3.0
     deepmerge: 4.3.1
@@ -856,26 +856,26 @@ __metadata:
     pkg-up: ^5.0.0
     sort-package-json: 2.10.0
     yaml: 2.4.1
-  checksum: de831c420ae0ef78a8d6c7ee4336036ac19e1b970e5564f72514e1ff99638fc186ebe63ef8b63a59504ed760f726112ed9c487cc76444b2db9e96e47080ed819
+  checksum: 5fd90681f1a763f03d7cc9dbdf944cf142da5d93e732d789d2b663b81ebc0185a0aa981bf5e82c65d43421d1d025cbf4cb71ef5fdc21fc4b790412d9e52e453b
   languageName: node
   linkType: hard
 
-"@mokr/plugins@npm:2.1.12":
-  version: 2.1.12
-  resolution: "@mokr/plugins@npm:2.1.12"
+"@mokr/plugins@npm:2.1.13":
+  version: 2.1.13
+  resolution: "@mokr/plugins@npm:2.1.13"
   dependencies:
-    "@mokr/core": 2.1.12
-  checksum: 83b4cbe48336df6aa9ba9ad00d5052b1576659359d1d3889b5cd7aa17b83b43e99339208bcb39f6f844f49efab579901101446490592387c9c62feaee89d67ba
+    "@mokr/core": 2.1.13
+  checksum: 2ccdb7ff25fd241b00fce7ae0826205fe8f253ef250b56afe59b6a8d9fa47a788232d0d45c4cd1f73a4d0e48c23175673e1a876fe629bea124495738429a0ceb
   languageName: node
   linkType: hard
 
-"@mokr/templates@npm:2.1.12":
-  version: 2.1.12
-  resolution: "@mokr/templates@npm:2.1.12"
+"@mokr/templates@npm:2.1.13":
+  version: 2.1.13
+  resolution: "@mokr/templates@npm:2.1.13"
   dependencies:
-    "@mokr/core": 2.1.12
-    "@mokr/plugins": 2.1.12
-  checksum: d76d0a89542cdcdf35a17631709754e122ee1e903a077c18454bd6660796747c391c0790c6882611980a94fb1d57ad9a410411c5d1d8615ca3ffde8c36922ba0
+    "@mokr/core": 2.1.13
+    "@mokr/plugins": 2.1.13
+  checksum: d7b9b9931586f42b938282c3b2d3a47174665876bab41573ee7d6996d102d7b2984dea2be92a844e0b00bc2290bfa16116bd6623fb04f1bf259c5a87152acb2f
   languageName: node
   linkType: hard
 
@@ -2234,19 +2234,6 @@ __metadata:
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
   checksum: 9706c088a283058a8a99e0bf91b0a2f75497f185980d9ffa8b304de1d9e58ebda7c72c07ebf01dadedaac5b2907b2c6f566f660d62bd336c3468e960403b9d65
-  languageName: node
-  linkType: hard
-
-"bandersnatch@npm:1.12.14":
-  version: 1.12.14
-  resolution: "bandersnatch@npm:1.12.14"
-  dependencies:
-    "@types/yargs": 17.0.32
-    enquirer: ^2.3.6
-    string-argv: ^0.3.1
-    typed-emitter: ^2.1.0
-    yargs: ^17.5.1
-  checksum: 6ebfedb7c305455e4f7beb6242f164c610f9c14f99b10d8bab69401ad5f1391424a7f92a22435d8532c229a2432218d7bdc4e8fb6f43ec7937815c6efabc7e61
   languageName: node
   linkType: hard
 
@@ -6308,17 +6295,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moker@npm:2.1.12":
-  version: 2.1.12
-  resolution: "moker@npm:2.1.12"
+"moker@npm:2.1.13":
+  version: 2.1.13
+  resolution: "moker@npm:2.1.13"
   dependencies:
-    "@mokr/core": 2.1.12
-    "@mokr/plugins": 2.1.12
-    "@mokr/templates": 2.1.12
-    bandersnatch: 1.12.14
+    "@mokr/core": 2.1.13
+    "@mokr/plugins": 2.1.13
+    "@mokr/templates": 2.1.13
+    bandersnatch: 1.12.15
   bin:
     moker: moker.js
-  checksum: b7ae5a61bef30771ab3658986d1543f645b339b065013c46bf1ddfeaf969ca09e1fe126ed0d5c787fde2e8e3b81556a0622246b1e38dd50e4856fe6bf90fbc7c
+  checksum: d67f77c185cad8b598e6df0b76a6913d6cc53409f65bb857446fa94690f2a6cf9d4c62e035c68d22be5aec7534a94a7f81906e57a229d5b4cf63aea99705328e
   languageName: node
   linkType: hard
 
@@ -6334,7 +6321,7 @@ __metadata:
     jest: 29.7.0
     leasot: 13.3.0
     lint-staged: 15.2.2
-    moker: 2.1.12
+    moker: 2.1.13
     prettier: 3.2.5
     semantic-release: 23.0.8
     semantic-release-yarn: 3.0.2
