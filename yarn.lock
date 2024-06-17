@@ -888,7 +888,7 @@ __metadata:
     "@types/jest": 29.5.12
     "@types/node": 20.12.12
     jest: 29.7.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -907,7 +907,7 @@ __metadata:
     bandersnatch: 1.12.15
     jest: 29.7.0
     js-yaml: 4.1.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   bin:
     cli: cli.js
@@ -921,7 +921,7 @@ __metadata:
     "@types/jest": 29.5.12
     "@types/node": 20.12.12
     jest: 29.7.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -934,7 +934,7 @@ __metadata:
     "@types/jest": 29.5.12
     "@types/node": 20.12.12
     jest: 29.7.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -948,7 +948,7 @@ __metadata:
     "@types/jest": 29.5.12
     "@types/node": 20.12.12
     jest: 29.7.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -962,7 +962,7 @@ __metadata:
     "@types/node": 20.12.12
     cross-fetch: 4.0.0
     jest: 29.7.0
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -6392,7 +6392,7 @@ __metadata:
     prettier: 3.2.5
     semantic-release: 23.1.1
     semantic-release-yarn: 3.0.2
-    ts-jest: 29.1.2
+    ts-jest: 29.1.5
     typescript: 5.4.5
   languageName: unknown
   linkType: soft
@@ -8728,9 +8728,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.1.2":
-  version: 29.1.2
-  resolution: "ts-jest@npm:29.1.2"
+"ts-jest@npm:29.1.5":
+  version: 29.1.5
+  resolution: "ts-jest@npm:29.1.5"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
@@ -8742,12 +8742,15 @@ __metadata:
     yargs-parser: ^21.0.1
   peerDependencies:
     "@babel/core": ">=7.0.0-beta.0 <8"
+    "@jest/transform": ^29.0.0
     "@jest/types": ^29.0.0
     babel-jest: ^29.0.0
     jest: ^29.0.0
     typescript: ">=4.3 <6"
   peerDependenciesMeta:
     "@babel/core":
+      optional: true
+    "@jest/transform":
       optional: true
     "@jest/types":
       optional: true
@@ -8757,7 +8760,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: a0ce0affc1b716c78c9ab55837829c42cb04b753d174a5c796bb1ddf9f0379fc20647b76fbe30edb30d9b23181908138d6b4c51ef2ae5e187b66635c295cefd5
+  checksum: 96bfdea46d7faa83457c2647806a31a86f28656f703515fee9f6d2ff1ccfc58ccfbbe3ae9283f40141a85af0def30afe887843be5b002c08ed5d5189c941eab1
   languageName: node
   linkType: hard
 
